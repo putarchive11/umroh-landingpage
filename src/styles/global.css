@@ -1081,3 +1081,14 @@ h3 { letter-spacing: -.01em; }
 .app-showcase .phone { margin-bottom: 30px; }
 .phone-screen.pm { height: 540px; min-height: 0; }
 .pm-screen .pm-list { max-height: none; min-height: 0; }
+
+/* Nuansa islami di layar mockup: pola bintang delapan (khatam) tipis + lengkung mihrab */
+.phone-screen.pm { background-color: #fbf8f0; background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2244%22%20height%3D%2244%22%20viewBox%3D%220%200%2044%2044%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23b99245%22%20stroke-width%3D%22.7%22%20opacity%3D%22.32%22%3E%3Crect%20x%3D%2212%22%20y%3D%2212%22%20width%3D%2220%22%20height%3D%2220%22/%3E%3Crect%20x%3D%2212%22%20y%3D%2212%22%20width%3D%2220%22%20height%3D%2220%22%20transform%3D%22rotate%2845%2022%2022%29%22/%3E%3Ccircle%20cx%3D%2222%22%20cy%3D%2222%22%20r%3D%224.2%22/%3E%3Cpath%20d%3D%22M0%200l8%208M44%200l-8%208M0%2044l8-8M44%2044l-8-8%22/%3E%3C/g%3E%3C/svg%3E"); background-size: 44px 44px; }
+.phone-screen.pm::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 150px; background: linear-gradient(180deg, #f3e7c6 0%, rgba(243,231,198,.75) 55%, rgba(251,248,240,0) 100%); border-radius: 0 0 50% 50% / 0 0 26px 26px; pointer-events: none; }
+.phone-screen.pm::after { content: ""; position: absolute; left: 50%; top: 30px; width: 120px; height: 120px; transform: translateX(-50%); background: radial-gradient(closest-side, rgba(185,146,69,.18), transparent); pointer-events: none; }
+.pm-screen { position: relative; z-index: 1; }
+.pm-hero { background: none; }
+.pm-head h4, .pm-hero h4 { color: #27483f; }
+.pm-item, .pm-coming, .pm-card { background: rgba(255,255,255,.94); border-color: #e8dcc0; }
+.pm-rukun { background: rgba(255,255,255,.9); border-color: #e8dcc0; }
+.pm-nav { z-index: 2; }
