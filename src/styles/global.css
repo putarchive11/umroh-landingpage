@@ -1244,3 +1244,12 @@ footer a:hover { color: var(--gold-light); }
 /* Label 13 bab / 4 tools / mutawif disembunyikan di hero: isinya sudah tampil di gambar produk
    dan di angka hero (13 bab panduan, 4 digital tools), jadi tidak menumpuk di atas HP */
 .book-stage--makkah .info-chip { display: none; }
+
+/* Pertanyaan di luar pembelian dialihkan ke email */
+.faq-help__ico { background: var(--emerald); color: var(--gold-light); box-shadow: inset 0 0 0 1px rgba(212,175,90,.5); }
+.faq-help__mail { font-size: .85rem; font-weight: 600; color: var(--gold-deep); user-select: all; }
+.footer-contact a i { color: var(--gold-light); }
+.footer-contact span { user-select: all; }
+.mail-float { background: var(--emerald); color: #fff8e7; border: 1px solid rgba(212,175,90,.55); box-shadow: 0 12px 30px rgba(11,42,34,.35); }
+.mail-float i { color: var(--gold-light); }
+.mail-float:hover { box-shadow: 0 16px 36px rgba(11,42,34,.45); }
