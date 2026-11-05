@@ -1228,3 +1228,19 @@ footer a:hover { color: var(--gold-light); }
   .pigeon svg { animation: none; }
 }
 @media (max-width: 700px) { .mk-clock { width: 90%; } .mk-word { display: none; } }
+
+/* Hero: gambar gabungan produk (halaman ebook + aplikasi di HP) di atas bilah jam Makkah */
+.hero-products { position: absolute; z-index: 3; left: 50%; bottom: 15%; width: min(430px, 98%); height: auto; translate: -50% 0; filter: drop-shadow(0 24px 40px rgba(0,0,0,.35)); animation: book-float 7s ease-in-out infinite; pointer-events: none; }
+.book-stage--makkah .info-chip--1 { top: 12%; left: -6%; }
+.book-stage--makkah .info-chip--2 { top: 20%; right: -6%; }
+.book-stage--makkah .info-chip--3 { top: 34%; left: auto; right: -8%; }
+@media (max-width: 700px) {
+  .hero-products { width: 104%; bottom: 14%; }
+  .book-stage--makkah .info-chip--1 { top: 10%; left: 0; }
+  .book-stage--makkah .info-chip--2 { top: 18%; right: 0; }
+  .book-stage--makkah .info-chip--3 { top: 27%; right: 0; left: auto; }
+}
+@media (prefers-reduced-motion: reduce) { .hero-products { animation: none; } }
+/* Label 13 bab / 4 tools / mutawif disembunyikan di hero: isinya sudah tampil di gambar produk
+   dan di angka hero (13 bab panduan, 4 digital tools), jadi tidak menumpuk di atas HP */
+.book-stage--makkah .info-chip { display: none; }
