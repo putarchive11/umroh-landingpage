@@ -1115,7 +1115,7 @@ h3 { letter-spacing: -.01em; }
 /* Hero: suasana Makkah — foto Menara Jam & menara Masjidil Haram jadi gambar utama di lengkung,
    langit senja keemasan di belakangnya (mix-blend multiply mengganti latar putih foto) */
 .book-stage--makkah .book-arch { width: min(430px, 88%); height: 96%; background: linear-gradient(180deg, #f6dfa8 0%, #e6b96d 34%, #b98a4a 58%, #3d4a37 82%, var(--emerald) 100%); box-shadow: 0 0 0 10px rgba(201,164,92,.07), 0 0 0 11px rgba(201,164,92,.25), 0 40px 80px rgba(0,0,0,.45); }
-.book-stage--makkah .book-arch img { height: 108%; object-position: 72% top; filter: saturate(1.05) contrast(1.04); mix-blend-mode: multiply; }
+.book-stage--makkah .book-arch img { height: 108%; object-position: 72% top; filter: none; mix-blend-mode: normal; }
 .book-stage--makkah .book-arch::after { background: linear-gradient(180deg, transparent 52%, rgba(11,42,34,.55) 80%, var(--emerald) 99%); }
 .book-stage--makkah .book-arch::before { content: ""; position: absolute; left: 14%; top: 13%; width: 120px; height: 120px; border-radius: 50%; background: radial-gradient(circle, rgba(255,244,214,.95) 0%, rgba(255,232,180,.55) 35%, transparent 70%); z-index: 1; mix-blend-mode: screen; pointer-events: none; }
 .book-stage--makkah .book-halo { background: radial-gradient(circle, rgba(231,207,152,.32), transparent 62%); }
@@ -1177,7 +1177,7 @@ h3 { letter-spacing: -.01em; }
 .closing--makkah { background: var(--emerald); }
 .closing--makkah::after { display: none; }
 .closing-photo { position: absolute; right: 0; top: 0; bottom: 0; width: min(46%, 560px); background: linear-gradient(180deg, #e6b96d 0%, #b98a4a 45%, var(--emerald) 100%); }
-.closing-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 70% top; mix-blend-mode: multiply; opacity: .9; }
+.closing-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 70% top; mix-blend-mode: normal; opacity: .95; }
 .closing-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, var(--emerald) 0%, rgba(11,42,34,.55) 35%, rgba(11,42,34,0) 70%), linear-gradient(0deg, var(--emerald) 0%, transparent 35%); }
 .closing--makkah .closing-content { max-width: 620px; }
 @media (max-width: 900px) { .closing-photo { width: 100%; opacity: .35; } .closing-photo::after { background: linear-gradient(180deg, rgba(11,42,34,.4), var(--emerald)); } }
@@ -1253,3 +1253,21 @@ footer a:hover { color: var(--gold-light); }
 .mail-float { background: var(--emerald); color: #fff8e7; border: 1px solid rgba(212,175,90,.55); box-shadow: 0 12px 30px rgba(11,42,34,.35); }
 .mail-float i { color: var(--gold-light); }
 .mail-float:hover { box-shadow: 0 16px 36px rgba(11,42,34,.45); }
+
+/* === Perbaikan Safari/iPhone 2026-11 === */
+/* Lengkung benar-benar memotong foto (Safari tidak memotong anak yang bergerak/parallax tanpa ini) */
+.book-arch, .closing-photo { isolation: isolate; -webkit-mask-image: -webkit-radial-gradient(white, black); }
+.book-arch { transform: translateX(-50%) translateZ(0); }
+.closing-photo { transform: translateZ(0); }
+.book-stage--makkah .book-arch::before { mix-blend-mode: normal; opacity: .7; }
+/* Gambar produk: ditengahkan tanpa properti translate (animasi melayang menimpa translate) */
+.hero-products { left: 0; right: 0; margin-inline: auto; translate: none; }
+@media (max-width: 700px) { .hero-products { width: 100%; } }
+/* Pesawat rute: hijau tua bergaris emas, terlihat di langit senja maupun latar hijau */
+.hero--emerald .route-plane { fill: var(--emerald); stroke: var(--gold-light); stroke-width: 1.1px; paint-order: stroke; filter: drop-shadow(0 2px 3px rgba(0,0,0,.35)); }
+.hero--emerald .route-line { opacity: .8; stroke-width: 2.4; }
+/* Tombol melayang kembali ke WhatsApp */
+.wa-float { background: #25D366; color: #fff; border: 0; box-shadow: 0 12px 30px rgba(18,140,126,.4); }
+.wa-float i { color: #fff; }
+.mk-clock { width: min(440px, 92%); }
+@media (max-width: 700px) { .mk-clock { width: 92%; } }

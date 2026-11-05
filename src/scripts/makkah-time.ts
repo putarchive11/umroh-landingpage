@@ -81,7 +81,10 @@ export function makkahNow(now = new Date()) {
   }
   const mins = Math.max(0, Math.round(wait * 60));
   const jam = Math.floor(mins / 60), menit = mins % 60;
-  const lagi = jam ? (menit ? `${jam} jam ${menit} menit lagi` : `${jam} jam lagi`) : `${menit} menit lagi`;
+  const sempit = typeof window !== 'undefined' && window.matchMedia('(max-width: 480px)').matches;
+  const lagi = sempit
+    ? (jam ? `${jam}j ${menit}m lagi` : `${menit} mnt lagi`)
+    : (jam ? (menit ? `${jam} jam ${menit} menit lagi` : `${jam} jam lagi`) : `${menit} menit lagi`);
   return { clock: `${pad(mk.getUTCHours())}.${pad(mk.getUTCMinutes())}`, next: next.name, nextAt: hhmm(next.t), lagi };
 }
 
