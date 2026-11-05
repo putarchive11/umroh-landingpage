@@ -1042,7 +1042,42 @@ h3 { letter-spacing: -.01em; }
 .pm-txt small { font-size: .54rem; color: #7a7568; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .pm-item > i { margin-left: auto; color: #7a7568; font-size: .75rem; }
 .pm-nav { position: absolute; left: 8px; right: 8px; bottom: 8px; display: flex; justify-content: space-around; padding: 7px 4px 6px; background: #fff; border-radius: 16px; box-shadow: 0 4px 16px rgba(0,0,0,.08); }
-.pm-nav span { display: grid; justify-items: center; gap: 1px; font-size: .5rem; color: #7a7568; }
-.pm-nav span i { font-size: .95rem; }
-.pm-nav span.on { color: #8b6914; font-weight: 700; }
+.pm-nav button { display: grid; justify-items: center; gap: 1px; padding: 2px 4px; border: 0; background: none; font: inherit; font-size: .5rem; color: #7a7568; cursor: pointer; border-radius: 8px; }
+.pm-nav button i { font-size: .95rem; }
+.pm-nav button.on { color: #8b6914; font-weight: 700; }
+.pm-nav button:hover { color: #8b6914; }
+.pm-nav button:focus-visible { outline: 2px solid #8b6914; outline-offset: 1px; }
 .app-note { margin-top: 18px; font-size: .9rem; }
+
+.pm-screen { display: flex; flex-direction: column; flex: 1; min-height: 0; }
+.pm-screen[hidden] { display: none; }
+.pm-item, .pm-quick div { cursor: default; user-select: none; }
+.pm-hero { padding: 4px 14px 10px; background: linear-gradient(180deg, #f5edd6 0%, transparent 100%); }
+.pm-brand { display: flex; align-items: center; gap: 7px; }
+.pm-logo { width: 26px; height: 26px; display: grid; place-items: center; border-radius: 8px; background: linear-gradient(135deg, #8b6914, #a08030); font-size: .8rem; }
+.pm-brand b { display: block; font-size: .5rem; letter-spacing: .14em; text-transform: uppercase; color: #7a7568; }
+.pm-brand small { display: block; font-size: .38rem; letter-spacing: .1em; color: #7a7568; }
+.pm-hero h4 { margin: 8px 0 3px; font-family: var(--serif); font-size: 1.08rem; font-weight: 700; color: #1a1a1a; }
+.pm-hero p { margin: 0; font-size: .55rem; line-height: 1.5; color: #7a7568; }
+.pm-quick { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; }
+.pm-quick div { display: grid; justify-items: center; gap: 1px; padding: 7px 3px; border-radius: 10px; border: 1px solid #ece7dc; text-align: center; }
+.pm-quick span { font-size: .9rem; }
+.pm-quick b { font-size: .5rem; color: #1a1a1a; }
+.pm-quick small { font-size: .42rem; color: #7a7568; }
+.pm-coming { display: grid; justify-items: center; gap: 4px; padding: 22px 14px; background: #fff; border: 1px solid #ece7dc; border-radius: 12px; text-align: center; }
+.pm-coming span { font-size: 1.6rem; }
+.pm-coming b { font-family: var(--serif); font-size: .9rem; color: #1a1a1a; }
+.pm-coming small { font-size: .56rem; line-height: 1.5; color: #7a7568; }
+.pm-rukun { padding: 9px; border-radius: 12px; background: linear-gradient(135deg, #f5edd6, transparent); border: 1px solid #ece7dc; text-align: center; }
+.pm-rukun b { display: block; font-size: .56rem; color: #8b6914; margin-bottom: 5px; }
+.pm-rukun div { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 3px; font-size: .55rem; font-weight: 700; color: #8b6914; }
+.pm-rukun span { padding: 3px 6px; border-radius: 6px; background: #f0ede6; color: #1a1a1a; font-size: .5rem; }
+.pm-card { display: grid; gap: 4px; padding: 9px; background: #fff; border: 1px solid #ece7dc; border-radius: 12px; }
+.pm-card b { font-size: .64rem; color: #1a1a1a; }
+.pm-card em { font-style: normal; margin-left: 4px; padding: 1px 6px; border-radius: 10px; background: #f5edd6; color: #8b6914; font-size: .48rem; }
+.pm-card small { font-size: .52rem; line-height: 1.5; color: #7a7568; }
+.pm-foot { margin: 6px 0 0; text-align: center; font-size: .5rem; color: #7a7568; }
+.pm-hint { display: flex; justify-content: center; align-items: center; gap: 5px; position: absolute; left: 0; right: 0; bottom: -30px; font-size: .78rem; color: var(--muted); }
+.app-showcase .phone { margin-bottom: 30px; }
+.phone-screen.pm { height: 540px; min-height: 0; }
+.pm-screen .pm-list { max-height: none; min-height: 0; }
