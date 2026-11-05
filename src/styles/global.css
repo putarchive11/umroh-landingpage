@@ -1200,3 +1200,31 @@ footer a:hover { color: var(--gold-light); }
 @media (max-width: 700px) { .footer-grid { grid-template-columns: 1fr; gap: 28px; } }
 .refs-star { right: -90px; top: -90px; width: 240px; height: 240px; opacity: .07; }
 .niat .eyebrow::before { display: none; }
+
+/* Hero: bilah jam Makkah (kecil melebar di bawah lengkung) */
+.mk-clock { position: absolute; z-index: 4; left: 50%; bottom: 7%; transform: translateX(-50%); width: min(380px, 80%); display: flex; align-items: center; gap: 10px; padding: 8px 14px; border-radius: 999px; background: rgba(11,42,34,.62); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(231,207,152,.45); box-shadow: 0 12px 30px -12px rgba(0,0,0,.6); color: #fff8e7; white-space: nowrap; }
+.mk-label { display: inline-flex; align-items: center; gap: 5px; font-size: .62rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--gold-light); }
+.mk-label i { font-size: .85rem; }
+.mk-time { font-family: var(--serif); font-size: 1.05rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.mk-sep { width: 1px; height: 16px; background: rgba(231,207,152,.4); }
+.mk-next { min-width: 0; overflow: hidden; text-overflow: ellipsis; font-size: .74rem; font-weight: 600; color: rgba(246,239,221,.85); font-variant-numeric: tabular-nums; }
+.book-stage--makkah .info-chip--3 { bottom: auto; top: 66%; left: -4%; }
+@media (max-width: 700px) {
+  .mk-clock { width: 82%; gap: 8px; padding: 7px 12px; bottom: 6%; }
+  .mk-label { font-size: .56rem; letter-spacing: .1em; }
+  .mk-time { font-size: .95rem; }
+  .mk-next { font-size: .68rem; }
+  .book-stage--makkah .info-chip--3 { top: 64%; left: 0; }
+}
+
+/* Hero: merpati Masjidil Haram terbang pelan di langit senja */
+.pigeons { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+.pigeon { position: absolute; top: var(--top); left: 0; width: var(--size); opacity: var(--o); animation: pigeon-fly var(--dur) linear var(--delay) infinite; }
+.pigeon svg { display: block; width: 100%; fill: #2b2a24; animation: pigeon-flap 1.1s ease-in-out infinite; transform-origin: 50% 60%; }
+@keyframes pigeon-fly { 0% { transform: translate(-60px, 0); } 50% { transform: translate(230px, -14px); } 100% { transform: translate(520px, 6px); } }
+@keyframes pigeon-flap { 0%, 100% { transform: scaleY(1); } 50% { transform: scaleY(.45); } }
+@media (prefers-reduced-motion: reduce) {
+  .pigeon { animation: none; left: calc(var(--top) * 2.4); }
+  .pigeon svg { animation: none; }
+}
+@media (max-width: 700px) { .mk-clock { width: 90%; } .mk-word { display: none; } }
