@@ -1027,3 +1027,22 @@ h3 { letter-spacing: -.01em; }
 .trust-icon--line i { font-size: 1.55rem; }
 @media (max-width: 700px) { .trust-icon--line { width: 46px; height: 46px; } }
 .buy-toast__icon i { font-size: 1.25rem; }
+
+/* Mockup layar Persiapan aplikasi Umroh Sendiri (meniru tampilan aslinya) */
+.phone-screen.pm { padding: 44px 0 0; gap: 0; background: #fafaf7; position: relative; }
+.pm-head { padding: 6px 14px 10px; }
+.pm-head h4 { margin: 0; font-family: var(--serif); font-size: 1.02rem; font-weight: 700; color: #1a1a1a; }
+.pm-head p { margin: 2px 0 0; font-size: .62rem; color: #7a7568; }
+.pm-list { flex: 1; display: flex; flex-direction: column; gap: 6px; padding: 0 12px 64px; max-height: 410px; overflow: hidden; -webkit-mask-image: linear-gradient(#000 82%, transparent); mask-image: linear-gradient(#000 82%, transparent); }
+.pm-label { margin: 6px 2px 0; font-size: .55rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #7a7568; }
+.pm-item { display: flex; align-items: center; gap: 9px; padding: 8px 9px; background: #fff; border: 1px solid #ece7dc; border-radius: 12px; }
+.pm-ico { width: 28px; height: 28px; flex: none; display: grid; place-items: center; border-radius: 8px; background: #f5edd6; font-size: .9rem; }
+.pm-txt { display: grid; min-width: 0; }
+.pm-txt b { font-size: .66rem; font-weight: 600; color: #1a1a1a; }
+.pm-txt small { font-size: .54rem; color: #7a7568; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pm-item > i { margin-left: auto; color: #7a7568; font-size: .75rem; }
+.pm-nav { position: absolute; left: 8px; right: 8px; bottom: 8px; display: flex; justify-content: space-around; padding: 7px 4px 6px; background: #fff; border-radius: 16px; box-shadow: 0 4px 16px rgba(0,0,0,.08); }
+.pm-nav span { display: grid; justify-items: center; gap: 1px; font-size: .5rem; color: #7a7568; }
+.pm-nav span i { font-size: .95rem; }
+.pm-nav span.on { color: #8b6914; font-weight: 700; }
+.app-note { margin-top: 18px; font-size: .9rem; }
