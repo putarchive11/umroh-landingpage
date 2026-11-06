@@ -1307,3 +1307,19 @@ footer a:hover { color: var(--gold-light); }
   .hero-products { width: 66%; }
   .mutawif-badge { top: 9%; left: 3%; right: auto; }
 }
+
+/* === Dua bilah jam: Indonesia (atas) + Makkah (bawah) === */
+.clock-stack { position: absolute; z-index: 4; left: 50%; bottom: 5%; transform: translateX(-50%); width: min(440px, 92%); display: grid; gap: 6px; }
+.clock-stack .mk-clock { position: static; transform: none; left: auto; bottom: auto; width: 100%; }
+.mk-clock--local { background: rgba(255,248,231,.9); border-color: rgba(185,146,69,.55); color: var(--emerald); }
+.mk-clock--local .mk-label { color: var(--gold-deep); }
+.mk-clock--local .mk-next { color: rgba(11,42,34,.78); }
+.mk-clock--local .mk-sep { background: rgba(185,146,69,.5); }
+.mk-label { min-width: 8.6em; }
+@media (max-width: 700px) { .clock-stack { width: 92%; bottom: 4%; gap: 5px; } .mk-label { min-width: 6.6em; } }
+
+/* === Gambar produk sedikit lebih besar, naik di atas dua bilah jam === */
+.hero-products { width: min(320px, 72%); bottom: 21%; }
+@media (max-width: 700px) { .hero-products { width: 74%; bottom: 23%; } }
+/* Rute JKT–JED di atas gambar produk agar label JKT tetap terlihat */
+.hero--emerald .route-art { z-index: 4; }
