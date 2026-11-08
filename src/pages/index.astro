@@ -2,6 +2,13 @@
 import '../styles/global.css';
 
 const canonical = "https://umrohsendiri.biz.id/";
+
+// QRIS asli (nominal sudah terkunci Rp125.000)
+const QRIS_IMG = "/images/qris.webp";
+const QRIS_MERCHANT = "EBOOK UMROH MANDIRI";
+const QRIS_NMID = "ID1026623269226";
+const HARGA_EBOOK = "Rp125.000";
+const WA_BUKTI = "https://wa.me/6287777995846?text=" + encodeURIComponent("Assalamu’alaikum, saya sudah membayar Paket Ebook + Digital Toolkit Rp125.000 via QRIS. Berikut bukti pembayarannya. Mohon dikirimkan ebooknya ke email: ");
 ---
 <html lang="id">
   <head>
@@ -332,7 +339,7 @@ const canonical = "https://umrohsendiri.biz.id/";
               <h3 class="palt-title">Untuk siap merencanakan mandiri</h3>
             </div>
             <div class="palt-price">
-              <span class="palt-price-value">Rp99.000</span>
+              <span class="palt-price-value">{HARGA_EBOOK}</span>
               <span class="palt-price-note">/ sekali bayar seumur hidup</span>
             </div>
             <ul class="palt-features">
@@ -343,7 +350,11 @@ const canonical = "https://umrohsendiri.biz.id/";
               <li class="palt-feature"><span class="palt-check"><i class="ph ph-check" aria-hidden="true"></i></span>Direktori aplikasi, website &amp; hotel rekomendasi</li>
               <li class="palt-feature"><span class="palt-check"><i class="ph ph-check" aria-hidden="true"></i></span>Update informasi &amp; regulasi terbaru</li>
             </ul>
-            <a class="palt-cta" href="https://wa.me/6287777995846?text=Assalamu%E2%80%99alaikum%2C%20saya%20tertarik%20dengan%20Paket%20Ebook%20%2B%20Digital%20Toolkit%20seharga%20Rp99.000.%20Mohon%20info%20cara%20mendapatkannya." target="_blank" rel="noopener">Ambil Paket Ebook + Toolkit <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+            <div class="palt-actions">
+              <button class="palt-cta palt-cta--qris" type="button" data-qris-open><i class="ph ph-qr-code" aria-hidden="true"></i> Bayar via QRIS</button>
+              <a class="palt-cta" href="https://wa.me/6287777995846?text=Assalamu%E2%80%99alaikum%2C%20saya%20tertarik%20dengan%20Paket%20Ebook%20%2B%20Digital%20Toolkit%20seharga%20Rp125.000.%20Mohon%20info%20cara%20mendapatkannya." target="_blank" rel="noopener">Tanya dulu via WhatsApp <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+              <span class="palt-pay-note"><i class="ph ph-shield-check" aria-hidden="true"></i> Bayar {HARGA_EBOOK}, tanpa biaya tambahan</span>
+            </div>
           </article>
 
           <article class="palt-card palt-card--vip reveal reveal-delay-1">
@@ -386,7 +397,7 @@ const canonical = "https://umrohsendiri.biz.id/";
           <div class="faq-item"><button class="faq-question" aria-expanded="false"><span>Apakah ebook menjamin biaya pasti lebih murah?</span><span class="faq-plus"><i class="ph ph-plus" aria-hidden="true"></i></span></button><div class="faq-answer">Tidak ada angka yang berlaku untuk semua orang. Biaya dipengaruhi musim, tiket, hotel, kurs, dan pilihan layanan. Ebook membantu Anda melihat komponen biaya agar dapat membuat perhitungan yang realistis.</div></div>
           <div class="faq-item"><button class="faq-question" aria-expanded="false"><span>Bagaimana jika saya tidak bisa bahasa Arab?</span><span class="faq-plus"><i class="ph ph-plus" aria-hidden="true"></i></span></button><div class="faq-answer">Ebook membahas persiapan komunikasi, aplikasi, dan hal praktis yang dapat membantu jamaah tetap lebih percaya diri meski tidak fasih berbahasa Arab.</div></div>
           <div class="faq-item"><button class="faq-question" aria-expanded="false"><span>Apakah panduan ini cocok untuk perjalanan bersama keluarga?</span><span class="faq-plus"><i class="ph ph-plus" aria-hidden="true"></i></span></button><div class="faq-answer">Ya. Bagian persiapan dan checklist dapat digunakan sebagai dasar untuk menyesuaikan kebutuhan pasangan, anak, orang tua, atau anggota keluarga lain.</div></div>
-          <div class="faq-item"><button class="faq-question" aria-expanded="false"><span>Bagaimana cara mendapatkan ebook setelah pembayaran?</span><span class="faq-plus"><i class="ph ph-plus" aria-hidden="true"></i></span></button><div class="faq-answer">Klik tombol paket yang dipilih untuk menghubungi WhatsApp. Anda akan menerima detail pembayaran, lalu file dikirim setelah pembayaran diverifikasi.</div></div>
+          <div class="faq-item"><button class="faq-question" aria-expanded="false"><span>Bagaimana cara mendapatkan ebook setelah pembayaran?</span><span class="faq-plus"><i class="ph ph-plus" aria-hidden="true"></i></span></button><div class="faq-answer">Untuk paket ebook, klik <b>Bayar via QRIS</b>, pastikan nominal Rp125.000 dan nama merchant EBOOK UMROH MANDIRI, lalu kirim bukti bayar ke WhatsApp admin. File ebook dikirim setelah pembayaran diverifikasi. Untuk paket VIP, hubungi admin lewat WhatsApp.</div></div>
         </div></div>
       </div>
     </section>
@@ -402,12 +413,51 @@ const canonical = "https://umrohsendiri.biz.id/";
       <div class="footer-contact"><b>Hubungi kami</b><a href="mailto:umrohsendiri@gmail.com?subject=Pertanyaan%20seputar%20Kunci%20Umroh%20Mandiri"><i class="ph ph-envelope-simple" aria-hidden="true"></i> Kirim email</a><span>umrohsendiri@gmail.com</span></div>
     </div><div class="container footer-bottom"><span>© <span id="year"></span> Kunci Umroh Mandiri</span><span>Panduan praktis untuk perjalanan yang lebih tenang.</span></div></footer>
     <a class="wa-float" href="https://wa.me/6287777995846?text=Assalamu%E2%80%99alaikum%2C%20saya%20ingin%20tanya%20tentang%20Kunci%20Umroh%20Mandiri." target="_blank" rel="noopener" aria-label="Chat WhatsApp admin"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i><span>Chat admin</span></a>
+
+  <dialog class="qris-modal" id="qris-modal" aria-labelledby="qris-title">
+    <div class="qris-box">
+      <button class="qris-close" type="button" data-qris-close aria-label="Tutup"><i class="ph ph-x" aria-hidden="true"></i></button>
+      <span class="qris-eyebrow">PAKET EBOOK + DIGITAL TOOLKIT</span>
+      <h3 class="qris-title" id="qris-title">Bayar via QRIS</h3>
+      <div class="qris-amount"><span>Total bayar</span><b>{HARGA_EBOOK}</b></div>
+      <div class="qris-code">
+        <img src={QRIS_IMG} alt="Kode QRIS pembayaran EBOOK UMROH MANDIRI Rp125.000" width="1125" height="1488" />
+      </div>
+      <a class="qris-save" href={QRIS_IMG} download="QRIS-Ebook-Umroh-Mandiri.webp"><i class="ph ph-download-simple" aria-hidden="true"></i> Simpan gambar QRIS</a>
+      <p class="qris-warn"><i class="ph ph-warning-circle" aria-hidden="true"></i><span>Pastikan nama merchant <b>{QRIS_MERCHANT}</b>. Admin tidak pernah mengirim QRIS lain lewat chat.</span></p>
+      <ol class="qris-steps">
+        <li><span>1</span><p>Buka m-banking atau e-wallet (GoPay, OVO, DANA, ShopeePay, dll.), pilih <b>Bayar/Scan QRIS</b>. Kalau membuka dari HP, simpan gambar lalu pilih dari galeri.</p></li>
+        <li><span>2</span><p>Nominal <b>{HARGA_EBOOK}</b> sudah otomatis terisi. Pastikan nama merchant <b>{QRIS_MERCHANT}</b>, lalu bayar.</p></li>
+        <li><span>3</span><p>Kirim bukti bayar ke admin. Ebook dikirim setelah pembayaran kami cek, insyaAllah.</p></li>
+      </ol>
+      <a class="qris-wa" href={WA_BUKTI} target="_blank" rel="noopener"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i> Kirim bukti bayar via WhatsApp</a>
+    </div>
+  </dialog>
     <div class="buy-toast" id="buy-toast" role="status" aria-live="polite">
     <div class="buy-toast__icon"><i class="ph ph-shopping-bag-open" aria-hidden="true"></i></div>
     <div class="buy-toast__text"><b id="buy-toast-name"></b><span id="buy-toast-time"></span></div>
     <button class="buy-toast__close" id="buy-toast-close" type="button" aria-label="Tutup"><i class="ph ph-x" aria-hidden="true"></i></button>
   </div>
 
+  <script>
+    const qrisModal = document.getElementById('qris-modal') as HTMLDialogElement | null;
+    if (qrisModal) {
+      const openQris = () => {
+        if (typeof qrisModal.showModal === 'function') qrisModal.showModal();
+        else qrisModal.setAttribute('open', '');
+        document.documentElement.classList.add('qris-lock');
+      };
+      const closeQris = () => {
+        if (typeof qrisModal.close === 'function') qrisModal.close();
+        else qrisModal.removeAttribute('open');
+        document.documentElement.classList.remove('qris-lock');
+      };
+      document.querySelectorAll('[data-qris-open]').forEach(b => b.addEventListener('click', openQris));
+      qrisModal.querySelectorAll('[data-qris-close]').forEach(b => b.addEventListener('click', closeQris));
+      qrisModal.addEventListener('click', e => { if (e.target === qrisModal) closeQris(); });
+      qrisModal.addEventListener('close', () => document.documentElement.classList.remove('qris-lock'));
+    }
+  </script>
   <script>
     import { startMakkahClock } from '../scripts/makkah-time';
     startMakkahClock();
