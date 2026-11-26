@@ -17,4 +17,4 @@ export const NAMA_PRODUK = 'Paket Ebook + Digital Toolkit Umroh Mandiri';
 export const HARGA = 125000;
 
 export const WA_ADMIN = '6287777995846';
-export const EMAIL_ADMIN = 'umrohsendiri@gmail.com';
+export const EMAIL_ADMIN = 'umrohsendri@gmail.com';
