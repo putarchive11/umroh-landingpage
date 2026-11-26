@@ -9,7 +9,7 @@ const QRIS_IMG = "/images/qris.webp";
 const QRIS_MERCHANT = "EBOOK UMROH MANDIRI";
 const QRIS_NMID = "ID1026623269226";
 const HARGA_EBOOK = "Rp125.000";
-const WA_BUKTI = "https://wa.me/6287777995846?text=" + encodeURIComponent("Assalamu’alaikum, saya sudah membayar Paket Ebook + Digital Toolkit Rp125.000 via QRIS. Berikut bukti pembayarannya. Mohon dikirimkan ebooknya ke email: ");
+const WA_BUKTI = "https://wa.me/6287777995846?text=" + encodeURIComponent("Assalamu’alaikum, saya sudah membayar Paket Ebook + Digital Toolkit Rp125.000 via QRIS. Berikut bukti pembayarannya. Mohon dikirimkan kode aktivasinya ke email: ");
 ---
 <html lang="id">
   <head>
@@ -108,7 +108,7 @@ const WA_BUKTI = "https://wa.me/6287777995846?text=" + encodeURIComponent("Assal
             <a class="hero-proof__guarantee" href="/refund/" title="Lihat syarat garansi"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>Garansi 100% jika tidak bermanfaat</a>
           </div>
           <div class="hero-stats hero-fade">
-            <div class="hero-stat"><b data-count="13">13</b><span>bab panduan</span></div>
+            <div class="hero-stat"><b data-count="13">13</b><span>bab, terbit bertahap</span></div>
             <div class="hero-stat"><b data-count="4">4</b><span>digital tools</span></div>
             <div class="hero-stat"><b>1×</b><span>bayar, akses selamanya</span></div>
           </div>
@@ -356,7 +356,7 @@ const WA_BUKTI = "https://wa.me/6287777995846?text=" + encodeURIComponent("Assal
               <span class="palt-price-note">/ sekali bayar seumur hidup</span>
             </div>
             <ul class="palt-features">
-              <li class="palt-feature"><span class="palt-check"><i class="ph ph-check" aria-hidden="true"></i></span>Ebook lengkap 13 bab: panduan A–Z umroh mandiri</li>
+              <li class="palt-feature"><span class="palt-check"><i class="ph ph-check" aria-hidden="true"></i></span>Ebook 13 bab: sedang disusun, hadir bertahap di aplikasi tanpa biaya tambahan</li>
               <li class="palt-feature"><span class="palt-check"><i class="ph ph-check" aria-hidden="true"></i></span>Checklist dokumen &amp; persiapan interaktif</li>
               <li class="palt-feature"><span class="palt-check"><i class="ph ph-check" aria-hidden="true"></i></span>Template anggaran &amp; kalkulator biaya</li>
               <li class="palt-feature"><span class="palt-check"><i class="ph ph-check" aria-hidden="true"></i></span>Itinerary &amp; rencana perjalanan siap pakai</li>
@@ -367,6 +367,7 @@ const WA_BUKTI = "https://wa.me/6287777995846?text=" + encodeURIComponent("Assal
               <button class="palt-cta palt-cta--qris" type="button" data-beli><i class="ph ph-qr-code hanya-manual" aria-hidden="true"></i><span class="hanya-manual">Bayar via QRIS</span><i class="ph ph-shopping-bag-open hanya-otomatis" aria-hidden="true"></i><span class="hanya-otomatis">Beli Sekarang</span></button>
               <a class="palt-cta" href="https://wa.me/6287777995846?text=Assalamu%E2%80%99alaikum%2C%20saya%20tertarik%20dengan%20Paket%20Ebook%20%2B%20Digital%20Toolkit%20seharga%20Rp125.000.%20Mohon%20info%20cara%20mendapatkannya." target="_blank" rel="noopener">Tanya dulu via WhatsApp <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
               <span class="palt-pay-note"><i class="ph ph-shield-check" aria-hidden="true"></i><span>Bayar {HARGA_EBOOK}, tanpa biaya tambahan<span class="hanya-otomatis"> · kode aktivasi langsung dikirim</span></span></span>
+            <span class="palt-pay-note"><i class="ph ph-info" aria-hidden="true"></i><span>Yang Anda terima sekarang: akses aplikasi (panduan ibadah, checklist, kalkulator). Ebook 13 bab menyusul bertahap di tab Ebook.</span></span>
             </div>
           </article>
 
@@ -384,7 +385,7 @@ const WA_BUKTI = "https://wa.me/6287777995846?text=" + encodeURIComponent("Assal
               <span class="palt-price-note">/ custom</span>
             </div>
             <ul class="palt-features">
-              <li class="palt-feature"><span class="palt-check"><i class="ph ph-check" aria-hidden="true"></i></span>Semua akses ebook lengkap 13 bab + 4 digital toolkit</li>
+              <li class="palt-feature"><span class="palt-check"><i class="ph ph-check" aria-hidden="true"></i></span>Semua isi Paket Ebook + Digital Toolkit</li>
               <li class="palt-feature"><span class="palt-check"><i class="ph ph-check" aria-hidden="true"></i></span>Penjemputan saat tiba di Arab Saudi</li>
               <li class="palt-feature"><span class="palt-check"><i class="ph ph-check" aria-hidden="true"></i></span>Bimbingan ibadah privat oleh mutawwif berpengalaman</li>
               <li class="palt-feature"><span class="palt-check"><i class="ph ph-check" aria-hidden="true"></i></span>Grup WhatsApp eksklusif sebelum &amp; saat di Saudi</li>
@@ -410,7 +411,8 @@ const WA_BUKTI = "https://wa.me/6287777995846?text=" + encodeURIComponent("Assal
           <div class="faq-item"><button class="faq-question" aria-expanded="false"><span>Apakah ebook menjamin biaya pasti lebih murah?</span><span class="faq-plus"><i class="ph ph-plus" aria-hidden="true"></i></span></button><div class="faq-answer">Tidak ada angka yang berlaku untuk semua orang. Biaya dipengaruhi musim, tiket, hotel, kurs, dan pilihan layanan. Ebook membantu Anda melihat komponen biaya agar dapat membuat perhitungan yang realistis.</div></div>
           <div class="faq-item"><button class="faq-question" aria-expanded="false"><span>Bagaimana jika saya tidak bisa bahasa Arab?</span><span class="faq-plus"><i class="ph ph-plus" aria-hidden="true"></i></span></button><div class="faq-answer">Ebook membahas persiapan komunikasi, aplikasi, dan hal praktis yang dapat membantu jamaah tetap lebih percaya diri meski tidak fasih berbahasa Arab.</div></div>
           <div class="faq-item"><button class="faq-question" aria-expanded="false"><span>Apakah panduan ini cocok untuk perjalanan bersama keluarga?</span><span class="faq-plus"><i class="ph ph-plus" aria-hidden="true"></i></span></button><div class="faq-answer">Ya. Bagian persiapan dan checklist dapat digunakan sebagai dasar untuk menyesuaikan kebutuhan pasangan, anak, orang tua, atau anggota keluarga lain.</div></div>
-          <div class="faq-item"><button class="faq-question" aria-expanded="false"><span>Bagaimana cara mendapatkan ebook setelah pembayaran?</span><span class="faq-plus"><i class="ph ph-plus" aria-hidden="true"></i></span></button><div class="faq-answer"><span class="hanya-manual">Untuk paket ebook, klik <b>Bayar via QRIS</b>, pastikan nominal Rp125.000 dan nama merchant EBOOK UMROH MANDIRI, lalu kirim bukti bayar ke WhatsApp admin. File ebook dikirim setelah pembayaran diverifikasi. Untuk paket VIP, hubungi admin lewat WhatsApp.</span><span class="hanya-otomatis">Klik <b>Beli Sekarang</b>, isi nama dan email, lalu bayar di halaman pembayaran Midtrans. Begitu pembayaran terverifikasi otomatis, kode aktivasi aplikasi langsung tampil di layar dan dikirim ke email Anda. Untuk paket VIP, hubungi admin lewat WhatsApp.</span></div></div>
+          <div class="faq-item"><button class="faq-question" aria-expanded="false"><span>Apakah ebook 13 bab sudah bisa dibaca semuanya?</span><span class="faq-plus"><i class="ph ph-plus" aria-hidden="true"></i></span></button><div class="faq-answer">Belum. Yang langsung Anda dapatkan adalah akses aplikasi: panduan ibadah, checklist, kalkulator biaya, dan alat persiapan lainnya. Ebook 13 bab sedang kami susun dan akan hadir bertahap di tab Ebook pada aplikasi yang sama, tanpa biaya tambahan. Bila ini belum sesuai harapan Anda, berlaku <a href="/refund/">garansi uang kembali 7 hari</a>.</div></div>
+          <div class="faq-item"><button class="faq-question" aria-expanded="false"><span>Bagaimana cara mendapatkan ebook setelah pembayaran?</span><span class="faq-plus"><i class="ph ph-plus" aria-hidden="true"></i></span></button><div class="faq-answer"><span class="hanya-manual">Untuk paket ebook, klik <b>Bayar via QRIS</b>, pastikan nominal Rp125.000 dan nama merchant EBOOK UMROH MANDIRI, lalu kirim bukti bayar ke WhatsApp admin. Kode aktivasi aplikasi dikirim setelah pembayaran diverifikasi. Untuk paket VIP, hubungi admin lewat WhatsApp.</span><span class="hanya-otomatis">Klik <b>Beli Sekarang</b>, isi nama dan email, lalu bayar di halaman pembayaran Midtrans. Begitu pembayaran terverifikasi otomatis, kode aktivasi aplikasi langsung tampil di layar dan dikirim ke email Anda. Untuk paket VIP, hubungi admin lewat WhatsApp.</span></div></div>
         </div></div>
       </div>
     </section>
@@ -445,6 +447,7 @@ const WA_BUKTI = "https://wa.me/6287777995846?text=" + encodeURIComponent("Assal
       <ul class="beli-info">
         <li><i class="ph ph-shield-check" aria-hidden="true"></i><span>Pembayaran aman diproses <b>Midtrans</b>: QRIS, e-wallet, atau transfer bank.</span></li>
         <li><i class="ph ph-key" aria-hidden="true"></i><span><b>Kode aktivasi aplikasi</b> langsung tampil setelah lunas dan dikirim ke email Anda.</span></li>
+        <li><i class="ph ph-info" aria-hidden="true"></i><span>Ebook 13 bab sedang disusun dan hadir bertahap di aplikasi, tanpa biaya tambahan.</span></li>
       </ul>
       <p class="beli-privasi">Dengan melanjutkan, Anda menyetujui <a href="/syarat/" target="_blank" rel="noopener">Syarat &amp; Ketentuan</a> dan <a href="/privasi/" target="_blank" rel="noopener">Kebijakan Privasi</a> kami.</p>
     </div>
@@ -464,7 +467,7 @@ const WA_BUKTI = "https://wa.me/6287777995846?text=" + encodeURIComponent("Assal
       <ol class="qris-steps">
         <li><span>1</span><p>Buka m-banking atau e-wallet (GoPay, OVO, DANA, ShopeePay, dll.), pilih <b>Bayar/Scan QRIS</b>. Kalau membuka dari HP, simpan gambar lalu pilih dari galeri.</p></li>
         <li><span>2</span><p>Nominal <b>{HARGA_EBOOK}</b> sudah otomatis terisi. Pastikan nama merchant <b>{QRIS_MERCHANT}</b>, lalu bayar.</p></li>
-        <li><span>3</span><p>Kirim bukti bayar ke admin. Ebook dikirim setelah pembayaran kami cek, insyaAllah.</p></li>
+        <li><span>3</span><p>Kirim bukti bayar ke admin. Kode aktivasi aplikasi dikirim setelah pembayaran kami cek, insyaAllah.</p></li>
       </ol>
       <a class="qris-wa" href={WA_BUKTI} target="_blank" rel="noopener"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i> Kirim bukti bayar via WhatsApp</a>
     </div>
