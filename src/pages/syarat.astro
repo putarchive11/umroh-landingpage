@@ -1,0 +1,70 @@
+---
+// Syarat & ketentuan pembelian. Isinya mengikat pemilik usaha kepada pembeli:
+// sesuaikan dengan keadaan usaha yang sebenarnya sebelum dipakai beriklan.
+import Sederhana from '../layouts/Sederhana.astro';
+import { EMAIL_ADMIN, WA_ADMIN } from '../config';
+
+const DIPERBARUI = '26 November 2026';
+---
+<Sederhana judul="Syarat & Ketentuan — Kunci Umroh Mandiri" deskripsi="Syarat dan ketentuan pembelian serta penggunaan aplikasi dan panduan Kunci Umroh Mandiri." jalur="/syarat/">
+  <article class="pv container">
+    <span class="eyebrow">Syarat &amp; ketentuan</span>
+    <h1>Aturan main yang jelas sejak awal.</h1>
+    <p class="pv-lead">Dengan membeli atau memakai Kunci Umroh Mandiri, Anda menyetujui ketentuan di halaman ini. Mohon dibaca; kami menulisnya sesingkat dan sejelas mungkin.</p>
+    <p class="pv-tanggal">Terakhir diperbarui: {DIPERBARUI}</p>
+
+    <h2>1. Apa yang Anda beli</h2>
+    <p>Paket Ebook + Digital Toolkit adalah <b>produk digital</b>: akses ke aplikasi Kunci Umroh Mandiri beserta panduan dan alat bantu di dalamnya, seperti checklist, kalkulator biaya, perencana perjalanan, dan panduan ibadah. Tidak ada barang fisik yang dikirim.</p>
+
+    <h2>2. Kami bukan biro perjalanan</h2>
+    <ul>
+      <li>Kunci Umroh Mandiri <b>bukan penyelenggara perjalanan ibadah umrah</b>. Kami tidak memberangkatkan jamaah, tidak menerbitkan visa, dan tidak menjual tiket maupun kamar hotel.</li>
+      <li>Semua pemesanan visa, tiket, hotel, dan transportasi Anda lakukan sendiri, langsung kepada penyedia resminya.</li>
+      <li>Bila kami merujuk Anda kepada pihak lain (misalnya pendamping ibadah atau transportasi), kesepakatan dan tanggung jawab layanannya ada antara Anda dan pihak tersebut.</li>
+    </ul>
+
+    <h2>3. Harga dan pembayaran</h2>
+    <ul>
+      <li>Harga yang berlaku adalah yang tertera di halaman pembelian saat Anda membayar. Pembayaran dilakukan satu kali, tanpa biaya langganan.</li>
+      <li>Pembayaran diproses oleh <b>Midtrans</b>. Kami tidak menerima maupun menyimpan data kartu, PIN, atau kode OTP Anda.</li>
+      <li>Pesanan yang tidak dibayar sampai batas waktunya batal dengan sendirinya.</li>
+    </ul>
+
+    <h2>4. Penyerahan akses</h2>
+    <ul>
+      <li>Setelah pembayaran terverifikasi, <b>kode aktivasi</b> ditampilkan di layar dan dikirim ke alamat email yang Anda isi. Pastikan alamat email Anda benar.</li>
+      <li>Belum menerima kode dalam 15 menit? Periksa folder spam, lalu hubungi admin dengan nomor pesanan Anda.</li>
+    </ul>
+
+    <h2>5. Pemakaian kode aktivasi</h2>
+    <ul>
+      <li>Satu kode untuk pemakaian pribadi di <b>paling banyak 2 perangkat</b>. Berganti perangkat? Hubungi admin, kami bantu memindahkannya.</li>
+      <li>Kode dan isi aplikasi tidak boleh dibagikan kepada umum, dijual kembali, atau disalin untuk disebarkan.</li>
+      <li>Kode yang terbukti disalahgunakan dapat kami nonaktifkan tanpa pengembalian dana.</li>
+    </ul>
+
+    <h2>6. Masa akses dan pembaruan</h2>
+    <ul>
+      <li>Akses Anda tidak dibatasi waktu dan berlaku selama layanan Kunci Umroh Mandiri beroperasi.</li>
+      <li>Bila suatu saat layanan harus dihentikan, kami memberi tahu lewat email paling lambat 30 hari sebelumnya.</li>
+      <li>Isi panduan kami perbarui dari waktu ke waktu. Kami berusaha, tetapi tidak dapat menjamin, setiap perubahan aturan langsung tercantum.</li>
+    </ul>
+
+    <h2>7. Batas isi panduan</h2>
+    <ul>
+      <li>Aturan visa, penerbangan, kesehatan, dan layanan di Arab Saudi maupun Indonesia dapat berubah sewaktu-waktu. <b>Selalu periksa sumber resmi</b> sebelum memesan atau berangkat.</li>
+      <li>Perkiraan biaya di aplikasi hanyalah alat hitung, bukan penawaran harga. Kami tidak menjanjikan biaya Anda lebih murah daripada paket perjalanan.</li>
+      <li>Panduan ibadah disusun sebagai ringkasan belajar dan bukan fatwa. Untuk keadaan khusus, tanyakan kepada ustadz yang Anda percayai.</li>
+      <li>Keputusan perjalanan sepenuhnya di tangan Anda. Kami tidak bertanggung jawab atas kerugian akibat penolakan visa, pembatalan, keterlambatan, atau perubahan aturan.</li>
+    </ul>
+
+    <h2>8. Garansi dan refund</h2>
+    <p>Ketentuan pengembalian dana ada di halaman <a href="/refund/">Garansi &amp; Kebijakan Refund</a>.</p>
+
+    <h2>9. Data pribadi</h2>
+    <p>Cara kami mengolah data Anda dijelaskan di <a href="/privasi/">Kebijakan Privasi</a>.</p>
+
+    <h2>10. Perubahan dan kontak</h2>
+    <p>Ketentuan ini dapat diperbarui; tanggal di bagian atas menunjukkan versi yang berlaku. Ketentuan ini tunduk pada hukum Republik Indonesia. Ada pertanyaan? Hubungi <a href={`mailto:${EMAIL_ADMIN}`}>{EMAIL_ADMIN}</a> atau <a href={`https://wa.me/${WA_ADMIN}`} target="_blank" rel="noopener">WhatsApp admin</a>.</p>
+  </article>
+</Sederhana>

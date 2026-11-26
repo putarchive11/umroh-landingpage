@@ -1,0 +1,53 @@
+---
+// Garansi & kebijakan refund. Syarat di halaman ini adalah janji kepada pembeli:
+// ubah angka dan ketentuannya hanya bila pemilik usaha memang sanggup menepatinya.
+import Sederhana from '../layouts/Sederhana.astro';
+import { EMAIL_ADMIN, WA_ADMIN } from '../config';
+
+const DIPERBARUI = '26 November 2026';
+const HARI_GARANSI = 7;
+const waRefund = `https://wa.me/${WA_ADMIN}?text=` + encodeURIComponent('Assalamu’alaikum, saya ingin mengajukan refund Kunci Umroh Mandiri. Nomor pesanan: ');
+---
+<Sederhana judul="Garansi & Kebijakan Refund — Kunci Umroh Mandiri" deskripsi="Syarat garansi uang kembali dan cara mengajukan refund pembelian Kunci Umroh Mandiri." jalur="/refund/">
+  <article class="pv container">
+    <span class="eyebrow">Garansi &amp; refund</span>
+    <h1>Tidak bermanfaat? Uang Anda kembali.</h1>
+    <p class="pv-lead">Kami ingin Anda membeli dengan tenang. Bila Paket Ebook + Digital Toolkit ternyata tidak bermanfaat bagi Anda, ajukan pengembalian dana dalam {HARI_GARANSI} hari sejak pembayaran.</p>
+    <p class="pv-tanggal">Terakhir diperbarui: {DIPERBARUI}</p>
+
+    <h2>1. Syarat garansi</h2>
+    <ul>
+      <li>Berlaku untuk <b>Paket Ebook + Digital Toolkit</b> yang dibeli lewat situs ini.</li>
+      <li>Pengajuan dilakukan <b>paling lambat {HARI_GARANSI} hari kalender</b> sejak pembayaran diterima.</li>
+      <li>Anda tidak perlu membuktikan apa pun. Cukup sampaikan alasannya secara singkat supaya kami bisa memperbaiki panduan ini.</li>
+      <li>Garansi berlaku satu kali untuk setiap pembeli.</li>
+    </ul>
+
+    <h2>2. Cara mengajukan</h2>
+    <ol>
+      <li>Hubungi kami lewat <a href={waRefund} target="_blank" rel="noopener">WhatsApp admin</a> atau email <a href={`mailto:${EMAIL_ADMIN}?subject=Pengajuan%20refund`}>{EMAIL_ADMIN}</a>.</li>
+      <li>Sertakan <b>nomor pesanan</b> (berawalan <code>UMR-</code>, tertera di email kode aktivasi) dan <b>alamat email</b> yang dipakai saat membeli.</li>
+      <li>Kami mengonfirmasi pengajuan Anda paling lambat 2 hari kerja.</li>
+    </ol>
+
+    <h2>3. Pengembalian dana</h2>
+    <ul>
+      <li>Dana dikembalikan <b>penuh sebesar yang Anda bayarkan</b>, paling lambat 7 hari kerja setelah pengajuan dikonfirmasi.</li>
+      <li>Dana dikembalikan ke metode pembayaran semula bila metode itu mendukungnya. Bila tidak, kami transfer ke rekening bank atas nama pembeli.</li>
+      <li>Setelah dana dikembalikan, <b>kode aktivasi dinonaktifkan</b> dan aplikasi terkunci di perangkat Anda.</li>
+    </ul>
+
+    <h2>4. Kendala pembayaran</h2>
+    <ul>
+      <li><b>Sudah membayar tetapi kode belum diterima:</b> hubungi admin dengan nomor pesanan Anda. Kami kirim ulang kodenya, atau mengembalikan dana Anda bila kode tidak dapat diberikan.</li>
+      <li><b>Terbayar dua kali:</b> kelebihan pembayaran dikembalikan penuh, tanpa batas waktu {HARI_GARANSI} hari.</li>
+    </ul>
+
+    <h2>5. Yang tidak termasuk</h2>
+    <ul>
+      <li>Pengajuan setelah lewat {HARI_GARANSI} hari sejak pembayaran.</li>
+      <li>Kode aktivasi yang dicabut karena disebarkan atau dijual kembali (lihat <a href="/syarat/">Syarat &amp; Ketentuan</a>).</li>
+      <li>Paket VIP dan layanan pendampingan: ketentuannya disepakati tersendiri sebelum pembayaran.</li>
+    </ul>
+  </article>
+</Sederhana>

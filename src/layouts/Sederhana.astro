@@ -1,0 +1,74 @@
+---
+// Kerangka halaman pendukung (terima kasih, kebijakan privasi): kepala halaman, Pixel, header dan footer ringkas.
+import '../styles/global.css';
+import MetaPixel from '../components/MetaPixel.astro';
+
+interface Props {
+  judul: string;
+  deskripsi: string;
+  jalur: string;
+  noindex?: boolean;
+  gelap?: boolean;
+}
+const { judul, deskripsi, jalur, noindex = false, gelap = false } = Astro.props;
+const kanonik = new URL(jalur, 'https://umrohsendiri.biz.id').href;
+---
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={deskripsi} />
+    {noindex ? <meta name="robots" content="noindex, nofollow" /> : <link rel="canonical" href={kanonik} />}
+    <title>{judul}</title>
+    <link rel="icon" type="image/png" href="/images/ka%27bah.png?v=2" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+    <!-- Skrip di slot ini berjalan SEBELUM Pixel (mis. membersihkan token dari alamat halaman). -->
+    <slot name="sebelum-pixel" />
+    <MetaPixel />
+  </head>
+  <body class:list={['hs', { 'hs--gelap': gelap }]}>
+    <header class="hs-header">
+      <div class="container hs-header__isi">
+        <a class="brand" href="/" aria-label="Kunci Umroh Mandiri, ke halaman utama"><img src="/images/ka'bah.png" alt="" /><span class="brand-text"><span class="brand-key">Kunci</span> Umroh Mandiri</span></a>
+      </div>
+    </header>
+    <main class="hs-main">
+      <slot />
+    </main>
+    <footer class="hs-footer">
+      <div class="container hs-footer__isi">
+        <span>© {new Date().getFullYear()} Kunci Umroh Mandiri</span>
+        <span><a href="/">Halaman utama</a> · <a href="/syarat/">Syarat &amp; ketentuan</a> · <a href="/refund/">Garansi &amp; refund</a> · <a href="/privasi/">Kebijakan privasi</a></span>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<style is:global>
+  body.hs { min-height: 100dvh; display: flex; flex-direction: column; }
+  .hs-header { border-bottom: 1px solid var(--line); background: var(--paper); }
+  .hs-header__isi { height: 68px; display: flex; align-items: center; }
+  .hs-header .brand img { height: 38px; }
+  .hs-main { flex: 1; }
+  footer.hs-footer { padding: 20px 0; font-size: .8rem; }
+  .hs-footer__isi { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; }
+  .hs-footer a { text-decoration: underline; text-underline-offset: 3px; }
+  .pv { max-width: 760px; padding: clamp(40px, 7vw, 84px) 0 clamp(56px, 8vw, 96px); }
+  .pv h1 { margin: 16px 0 18px; font-size: clamp(2rem, 6vw, 3.1rem); letter-spacing: -.035em; }
+  .pv-lead { color: var(--muted); font-size: 1.08rem; }
+  .pv-tanggal { color: var(--muted); font-size: .85rem; }
+  .pv h2 { margin: 44px 0 12px; font-size: clamp(1.3rem, 3.6vw, 1.65rem); letter-spacing: -.02em; }
+  .pv h3 { margin: 22px 0 8px; font-family: var(--sans); font-size: 1rem; font-weight: 700; letter-spacing: 0; }
+  .pv p, .pv li { font-size: .98rem; line-height: 1.7; }
+  .pv ul, .pv ol { margin: 0 0 16px; padding-left: 22px; }
+  .pv li { margin-bottom: 6px; }
+  .pv a { color: var(--gold-deep); text-decoration: underline; text-underline-offset: 3px; }
+  .pv code { padding: 1px 6px; border-radius: 6px; background: var(--paper-deep); font-size: .88em; }
+  body.hs--gelap { background: #0b2a22; }
+  body.hs--gelap .hs-header { background: #0b2a22; border-bottom-color: rgba(231, 207, 152, .16); }
+  body.hs--gelap .hs-header .brand-text { color: #fff8e7; }
+  body.hs--gelap .hs-header .brand-key { color: #e7cf98; }
+</style>

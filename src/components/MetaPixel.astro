@@ -1,0 +1,13 @@
+---
+// Kode dasar Meta Pixel. Hanya dimuat bila PUBLIC_META_PIXEL_ID diisi.
+// PageView diberi eventID supaya pasangan sisi servernya (Conversions API) tidak terhitung dua kali.
+import { PIXEL_ID } from '../config';
+---
+{PIXEL_ID && (
+  <script is:inline define:vars={{ PIXEL_ID }}>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    window.__kumPvId = 'pv.' + Date.now() + '.' + Math.random().toString(36).slice(2, 10);
+    fbq('init', PIXEL_ID);
+    fbq('track', 'PageView', {}, { eventID: window.__kumPvId });
+  </script>
+)}

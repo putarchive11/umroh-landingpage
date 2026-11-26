@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import MetaPixel from '../components/MetaPixel.astro';
 
 const canonical = "https://umrohsendiri.biz.id/";
 
@@ -19,7 +20,19 @@ const WA_BUKTI = "https://wa.me/6287777995846?text=" + encodeURIComponent("Assal
     <meta property="og:title" content="Umroh Mandiri dari Nol — Panduan Praktis" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content="Kunci Umroh Mandiri" />
+    <meta property="og:locale" content="id_ID" />
+    <meta property="og:description" content="Aplikasi dan panduan praktis untuk mempersiapkan umroh mandiri: checklist, kalkulator biaya, dan panduan ibadah." />
+    <meta property="og:image" content="https://www.umrohsendiri.biz.id/images/og.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
     <title>Umroh Mandiri dari Nol — Panduan Praktis</title>
+    <!-- Checkout otomatis: pakai jawaban server terakhir (maks. 1 hari) supaya tombol tidak berkedip saat halaman dimuat. -->
+    <script is:inline>
+      try { var c = JSON.parse(localStorage.getItem('kum_toko') || 'null'); if (c && c.aktif && Date.now() - c.t < 864e5) document.documentElement.classList.add('checkout-otomatis'); } catch (e) {}
+    </script>
+    <MetaPixel />
 <link rel="icon" type="image/png" href="/images/ka%27bah.png?v=2" />    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&family=Cinzel:wght@600;700&family=Amiri&display=swap" rel="stylesheet" />    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
@@ -68,7 +81,7 @@ const WA_BUKTI = "https://wa.me/6287777995846?text=" + encodeURIComponent("Assal
         <a href="#alur">Alur</a>
         <a href="#isi">Isi ebook</a>
         <a href="#paket">Paket</a>
-        <a href="#penulis">Penulis</a>
+        <a href="#penulis">Tentang</a>
         <a href="#faq">FAQ</a>
         <a class="nav-cta" href="https://wa.me/6287777995846?text=Assalamu%E2%80%99alaikum%2C%20saya%20ingin%20mulai%20persiapan%20umroh%20mandiri.%20Mohon%20info%20ebooknya." target="_blank" rel="noopener">Chat WhatsApp <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
       </nav>
@@ -92,7 +105,7 @@ const WA_BUKTI = "https://wa.me/6287777995846?text=" + encodeURIComponent("Assal
             <span class="hero-proof__stars" aria-hidden="true"><i class="ph ph-book-open-text"></i></span>
             <span><b>Disusun dari panduan resmi</b> · edisi 2026</span>
             <span class="hero-proof__sep" aria-hidden="true"></span>
-            <span class="hero-proof__guarantee"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>Garansi 100% jika tidak bermanfaat</span>
+            <a class="hero-proof__guarantee" href="/refund/" title="Lihat syarat garansi"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>Garansi 100% jika tidak bermanfaat</a>
           </div>
           <div class="hero-stats hero-fade">
             <div class="hero-stat"><b data-count="13">13</b><span>bab panduan</span></div>
@@ -351,9 +364,9 @@ const WA_BUKTI = "https://wa.me/6287777995846?text=" + encodeURIComponent("Assal
               <li class="palt-feature"><span class="palt-check"><i class="ph ph-check" aria-hidden="true"></i></span>Update informasi &amp; regulasi terbaru</li>
             </ul>
             <div class="palt-actions">
-              <button class="palt-cta palt-cta--qris" type="button" data-qris-open><i class="ph ph-qr-code" aria-hidden="true"></i> Bayar via QRIS</button>
+              <button class="palt-cta palt-cta--qris" type="button" data-beli><i class="ph ph-qr-code hanya-manual" aria-hidden="true"></i><span class="hanya-manual">Bayar via QRIS</span><i class="ph ph-shopping-bag-open hanya-otomatis" aria-hidden="true"></i><span class="hanya-otomatis">Beli Sekarang</span></button>
               <a class="palt-cta" href="https://wa.me/6287777995846?text=Assalamu%E2%80%99alaikum%2C%20saya%20tertarik%20dengan%20Paket%20Ebook%20%2B%20Digital%20Toolkit%20seharga%20Rp125.000.%20Mohon%20info%20cara%20mendapatkannya." target="_blank" rel="noopener">Tanya dulu via WhatsApp <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
-              <span class="palt-pay-note"><i class="ph ph-shield-check" aria-hidden="true"></i> Bayar {HARGA_EBOOK}, tanpa biaya tambahan</span>
+              <span class="palt-pay-note"><i class="ph ph-shield-check" aria-hidden="true"></i> Bayar {HARGA_EBOOK}, tanpa biaya tambahan<span class="hanya-otomatis">&nbsp;· kode aktivasi langsung dikirim</span></span>
             </div>
           </article>
 
@@ -397,7 +410,7 @@ const WA_BUKTI = "https://wa.me/6287777995846?text=" + encodeURIComponent("Assal
           <div class="faq-item"><button class="faq-question" aria-expanded="false"><span>Apakah ebook menjamin biaya pasti lebih murah?</span><span class="faq-plus"><i class="ph ph-plus" aria-hidden="true"></i></span></button><div class="faq-answer">Tidak ada angka yang berlaku untuk semua orang. Biaya dipengaruhi musim, tiket, hotel, kurs, dan pilihan layanan. Ebook membantu Anda melihat komponen biaya agar dapat membuat perhitungan yang realistis.</div></div>
           <div class="faq-item"><button class="faq-question" aria-expanded="false"><span>Bagaimana jika saya tidak bisa bahasa Arab?</span><span class="faq-plus"><i class="ph ph-plus" aria-hidden="true"></i></span></button><div class="faq-answer">Ebook membahas persiapan komunikasi, aplikasi, dan hal praktis yang dapat membantu jamaah tetap lebih percaya diri meski tidak fasih berbahasa Arab.</div></div>
           <div class="faq-item"><button class="faq-question" aria-expanded="false"><span>Apakah panduan ini cocok untuk perjalanan bersama keluarga?</span><span class="faq-plus"><i class="ph ph-plus" aria-hidden="true"></i></span></button><div class="faq-answer">Ya. Bagian persiapan dan checklist dapat digunakan sebagai dasar untuk menyesuaikan kebutuhan pasangan, anak, orang tua, atau anggota keluarga lain.</div></div>
-          <div class="faq-item"><button class="faq-question" aria-expanded="false"><span>Bagaimana cara mendapatkan ebook setelah pembayaran?</span><span class="faq-plus"><i class="ph ph-plus" aria-hidden="true"></i></span></button><div class="faq-answer">Untuk paket ebook, klik <b>Bayar via QRIS</b>, pastikan nominal Rp125.000 dan nama merchant EBOOK UMROH MANDIRI, lalu kirim bukti bayar ke WhatsApp admin. File ebook dikirim setelah pembayaran diverifikasi. Untuk paket VIP, hubungi admin lewat WhatsApp.</div></div>
+          <div class="faq-item"><button class="faq-question" aria-expanded="false"><span>Bagaimana cara mendapatkan ebook setelah pembayaran?</span><span class="faq-plus"><i class="ph ph-plus" aria-hidden="true"></i></span></button><div class="faq-answer"><span class="hanya-manual">Untuk paket ebook, klik <b>Bayar via QRIS</b>, pastikan nominal Rp125.000 dan nama merchant EBOOK UMROH MANDIRI, lalu kirim bukti bayar ke WhatsApp admin. File ebook dikirim setelah pembayaran diverifikasi. Untuk paket VIP, hubungi admin lewat WhatsApp.</span><span class="hanya-otomatis">Klik <b>Beli Sekarang</b>, isi nama dan email, lalu bayar di halaman pembayaran Midtrans. Begitu pembayaran terverifikasi otomatis, kode aktivasi aplikasi langsung tampil di layar dan dikirim ke email Anda. Untuk paket VIP, hubungi admin lewat WhatsApp.</span></div></div>
         </div></div>
       </div>
     </section>
@@ -409,10 +422,33 @@ const WA_BUKTI = "https://wa.me/6287777995846?text=" + encodeURIComponent("Assal
 
   <footer><div class="container footer-grid">
       <div class="footer-about"><a class="footer-brand" href="#top"><img src="/images/ka'bah.png" alt="Logo Ka'bah" /><span class="brand-text"><span class="brand-key">Kunci</span> Umroh Mandiri</span></a><p>Panduan praktis merencanakan umroh mandiri, dari dokumen sampai kembali ke rumah.</p></div>
-      <nav class="footer-links" aria-label="Tautan bawah"><b>Jelajahi</b><a href="#alur">Alur perjalanan</a><a href="#isi">Isi ebook</a><a href="#paket">Paket</a><a href="#faq">FAQ</a></nav>
+      <nav class="footer-links" aria-label="Tautan bawah"><b>Jelajahi</b><a href="#alur">Alur perjalanan</a><a href="#isi">Isi ebook</a><a href="#paket">Paket</a><a href="#faq">FAQ</a><a href="/syarat/">Syarat &amp; ketentuan</a><a href="/refund/">Garansi &amp; refund</a><a href="/privasi/">Kebijakan privasi</a></nav>
       <div class="footer-contact"><b>Hubungi kami</b><a href="mailto:umrohsendiri@gmail.com?subject=Pertanyaan%20seputar%20Kunci%20Umroh%20Mandiri"><i class="ph ph-envelope-simple" aria-hidden="true"></i> Kirim email</a><span>umrohsendiri@gmail.com</span></div>
     </div><div class="container footer-bottom"><span>© <span id="year"></span> Kunci Umroh Mandiri</span><span>Panduan praktis untuk perjalanan yang lebih tenang.</span></div></footer>
     <a class="wa-float" href="https://wa.me/6287777995846?text=Assalamu%E2%80%99alaikum%2C%20saya%20ingin%20tanya%20tentang%20Kunci%20Umroh%20Mandiri." target="_blank" rel="noopener" aria-label="Chat WhatsApp admin"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i><span>Chat admin</span></a>
+
+  <dialog class="qris-modal" id="beli-modal" aria-labelledby="beli-title">
+    <div class="qris-box">
+      <button class="qris-close" type="button" data-beli-tutup aria-label="Tutup"><i class="ph ph-x" aria-hidden="true"></i></button>
+      <span class="qris-eyebrow">PAKET EBOOK + DIGITAL TOOLKIT</span>
+      <h3 class="qris-title" id="beli-title">Beli sekarang</h3>
+      <div class="qris-amount"><span>Total bayar</span><b>{HARGA_EBOOK}</b></div>
+      <form class="beli-form" id="beli-form" novalidate>
+        <label class="beli-field"><span>Nama lengkap</span><input name="nama" type="text" autocomplete="name" maxlength="80" placeholder="Nama Anda" required /></label>
+        <label class="beli-field"><span>Email <small>kode aktivasi dikirim ke sini</small></span><input name="email" type="email" inputmode="email" autocomplete="email" autocapitalize="off" spellcheck="false" maxlength="120" placeholder="nama@email.com" required /></label>
+        <label class="beli-field"><span>No. WhatsApp <small>opsional, untuk bantuan</small></span><input name="wa" type="tel" inputmode="tel" autocomplete="tel" maxlength="20" placeholder="08xxxxxxxxxx" /></label>
+        <div class="beli-jebakan" aria-hidden="true"><label>Situs web<input name="situs" type="text" tabindex="-1" autocomplete="off" /></label></div>
+        <p class="beli-galat" data-beli-galat role="alert" hidden></p>
+        <div class="beli-manual" data-beli-manual hidden><button type="button"><i class="ph ph-qr-code" aria-hidden="true"></i> Bayar manual via QRIS saja</button></div>
+        <button class="qris-wa beli-kirim" type="submit"><i class="ph ph-lock-key" aria-hidden="true"></i><span>Lanjut ke pembayaran</span></button>
+      </form>
+      <ul class="beli-info">
+        <li><i class="ph ph-shield-check" aria-hidden="true"></i><span>Pembayaran aman diproses <b>Midtrans</b>: QRIS, e-wallet, atau transfer bank.</span></li>
+        <li><i class="ph ph-key" aria-hidden="true"></i><span><b>Kode aktivasi aplikasi</b> langsung tampil setelah lunas dan dikirim ke email Anda.</span></li>
+      </ul>
+      <p class="beli-privasi">Dengan melanjutkan, Anda menyetujui <a href="/syarat/" target="_blank" rel="noopener">Syarat &amp; Ketentuan</a> dan <a href="/privasi/" target="_blank" rel="noopener">Kebijakan Privasi</a> kami.</p>
+    </div>
+  </dialog>
 
   <dialog class="qris-modal" id="qris-modal" aria-labelledby="qris-title">
     <div class="qris-box">
@@ -457,6 +493,10 @@ const WA_BUKTI = "https://wa.me/6287777995846?text=" + encodeURIComponent("Assal
       qrisModal.addEventListener('click', e => { if (e.target === qrisModal) closeQris(); });
       qrisModal.addEventListener('close', () => document.documentElement.classList.remove('qris-lock'));
     }
+  </script>
+  <script>
+    import { initToko } from '../scripts/toko';
+    initToko();
   </script>
   <script>
     import { startMakkahClock } from '../scripts/makkah-time';
