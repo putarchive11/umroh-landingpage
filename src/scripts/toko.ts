@@ -157,7 +157,7 @@ export function initToko(): void {
         return;
       }
       // Salah isian → pembeli bisa memperbaiki. Gangguan server/gateway → tawarkan pembayaran manual.
-      const bisaDiperbaiki = status === 400 || status === 429;
+      const bisaDiperbaiki = status === 400 || status === 429 || String(data.alasan || '').startsWith('kunci_uji');
       tampilGalat(data.pesan || 'Pembayaran otomatis sedang terkendala.', !bisaDiperbaiki);
     } catch {
       tampilGalat('Koneksi terputus. Periksa internet Anda lalu coba lagi.', true);
