@@ -1359,3 +1359,33 @@ html.qris-lock { overflow: hidden; }
 .qris-merchant { font-weight: 500; color: #6F746E; letter-spacing: .3px; }
 .qris-warn { display: flex; gap: 8px; align-items: flex-start; margin: 14px 0 0; padding: 10px 12px; border-radius: 12px; background: #B992451F; color: #5A4520; font-size: 12.5px; line-height: 1.45; text-align: left; }
 .qris-warn i { flex: none; font-size: 17px; color: #8F6B2E; margin-top: 1px; }
+
+/* ─── Checkout otomatis ───
+   <html class="checkout-otomatis"> dipasang oleh src/scripts/toko.ts bila server menyatakan pembayaran
+   otomatis (Midtrans) siap. Tanpa kelas itu, halaman tetap memakai alur QRIS manual. */
+.hanya-otomatis { display: none !important; }
+html.checkout-otomatis .hanya-otomatis { display: inline !important; }
+html.checkout-otomatis .hanya-manual { display: none !important; }
+.faq-item.is-open .faq-answer { max-height: 340px; }
+
+.beli-form { display: grid; gap: 12px; margin: 2px 0 16px; text-align: left; }
+.beli-field { display: grid; gap: 6px; }
+.beli-field > span { color: #14251E; font-size: 13px; font-weight: 700; }
+.beli-field small { margin-left: 6px; color: #6F746E; font-size: 12px; font-weight: 500; }
+.beli-field input { width: 100%; height: 50px; padding: 0 14px; border: 1.5px solid #D9C99A; border-radius: 14px; background: #fff; color: #1E211E; font: inherit; font-size: 16px; /* 16px: iOS tidak memperbesar layar saat mengetik */ }
+.beli-field input::placeholder { color: #A9AEA8; }
+.beli-field input:focus { outline: none; border-color: #0B5A40; box-shadow: 0 0 0 3px #0B5A4026; }
+.beli-jebakan { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.beli-galat { margin: 0; padding: 10px 12px; border-radius: 12px; background: #B3402A14; color: #8F2F1E; font-size: 13px; line-height: 1.45; }
+.beli-manual button { display: inline-flex; align-items: center; gap: 6px; padding: 0; border: 0; background: none; color: #0B5A40; font: inherit; font-size: 13.5px; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.beli-galat[hidden], .beli-manual[hidden] { display: none; }
+.beli-kirim { width: 100%; margin-top: 4px; border: 0; font-family: inherit; cursor: pointer; }
+.beli-kirim:disabled { opacity: .75; cursor: progress; }
+.beli-kirim.is-sibuk i { display: none; }
+.beli-kirim.is-sibuk::before { content: ""; width: 18px; height: 18px; border: 2.5px solid #FFF8E766; border-top-color: #FFF8E7; border-radius: 50%; animation: beli-putar .9s linear infinite; }
+@keyframes beli-putar { to { transform: rotate(360deg); } }
+.beli-info { display: grid; gap: 8px; margin: 0 0 14px; padding: 0; list-style: none; text-align: left; }
+.beli-info li { display: flex; gap: 8px; align-items: flex-start; color: #3C4A42; font-size: 12.5px; line-height: 1.5; }
+.beli-info i { flex: none; margin-top: 1px; color: #8F6B2E; font-size: 17px; }
+.beli-privasi { margin: 0; color: #6F746E; font-size: 11.5px; line-height: 1.5; }
+.beli-privasi a { color: #0B5A40; text-decoration: underline; text-underline-offset: 2px; }

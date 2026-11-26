@@ -1,0 +1,96 @@
+---
+// Kebijakan privasi. Isinya menggambarkan apa yang benar-benar dilakukan kode checkout dan pelacakan
+// di repo ini dan repo aplikasi. Bila alurnya berubah, perbarui juga halaman ini.
+import Sederhana from '../layouts/Sederhana.astro';
+import { EMAIL_ADMIN, WA_ADMIN } from '../config';
+
+const DIPERBARUI = '26 November 2026';
+---
+<Sederhana judul="Kebijakan Privasi — Kunci Umroh Mandiri" deskripsi="Data apa yang dikumpulkan Kunci Umroh Mandiri saat Anda berkunjung dan membeli, untuk apa, dan bagaimana cara menghapusnya." jalur="/privasi/">
+  <article class="pv container">
+    <span class="eyebrow">Kebijakan privasi</span>
+    <h1>Data Anda, amanah kami.</h1>
+    <p class="pv-lead">Halaman ini menjelaskan dengan bahasa sederhana data apa yang kami kumpulkan saat Anda mengunjungi situs ini dan membeli Kunci Umroh Mandiri, untuk apa data itu dipakai, dan bagaimana Anda bisa meminta kami menghapusnya.</p>
+    <p class="pv-tanggal">Terakhir diperbarui: {DIPERBARUI}</p>
+
+    <h2>1. Siapa kami</h2>
+    <p>Situs <b>umrohsendiri.biz.id</b> dan aplikasi Kunci Umroh Mandiri dikelola oleh tim Kunci Umroh Mandiri. Untuk semua hal terkait data pribadi, hubungi kami lewat email <a href={`mailto:${EMAIL_ADMIN}`}>{EMAIL_ADMIN}</a> atau <a href={`https://wa.me/${WA_ADMIN}`} target="_blank" rel="noopener">WhatsApp admin</a>.</p>
+
+    <h2>2. Data yang kami kumpulkan</h2>
+    <h3>Saat Anda membeli</h3>
+    <ul>
+      <li><b>Nama dan alamat email</b> — untuk membuat pesanan dan mengirim kode aktivasi.</li>
+      <li><b>Nomor WhatsApp</b> (tidak wajib) — hanya dipakai bila Anda membutuhkan bantuan.</li>
+      <li><b>Status pembayaran</b> — nomor pesanan, nominal, metode, dan waktu pembayaran yang kami terima dari Midtrans.</li>
+    </ul>
+    <p>Pembayaran diproses di halaman milik <b>Midtrans</b>. Kami <b>tidak pernah</b> menerima atau menyimpan nomor kartu, PIN, kata sandi, maupun kode OTP Anda.</p>
+
+    <h3>Saat Anda berkunjung</h3>
+    <ul>
+      <li><b>Data teknis</b> — alamat IP, jenis browser dan perangkat, serta halaman yang dibuka.</li>
+      <li><b>Cookie iklan Meta</b> (<code>_fbp</code> dan <code>_fbc</code>) — pengenal acak yang menandai browser Anda dan, bila Anda datang dari iklan, iklan mana yang Anda klik.</li>
+    </ul>
+
+    <h3>Saat Anda memakai aplikasi</h3>
+    <ul>
+      <li>Catatan, checklist, anggaran, dan isian lain di aplikasi <b>disimpan di perangkat Anda sendiri</b> dan tidak dikirim ke server kami.</li>
+      <li>Server hanya menyimpan kode aktivasi Anda, pengenal acak perangkat yang memakainya, jenis perangkat (misalnya “Android”), dan waktu aktivasi — untuk menjaga batas jumlah perangkat per kode.</li>
+    </ul>
+
+    <h2>3. Untuk apa data itu dipakai</h2>
+    <ul>
+      <li>Memproses pesanan dan mengirim kode aktivasi ke email Anda.</li>
+      <li>Membantu Anda bila ada kendala pembayaran atau aktivasi.</li>
+      <li>Mencegah penyalahgunaan, misalnya membatasi percobaan berulang dari satu alamat IP.</li>
+      <li>Mengukur iklan mana yang benar-benar membawa pembeli, supaya biaya iklan tidak terbuang.</li>
+    </ul>
+    <p>Kami tidak menjual data Anda dan tidak mengirim email promosi tanpa persetujuan Anda.</p>
+
+    <h2>4. Pengukuran iklan Meta (Facebook &amp; Instagram)</h2>
+    <p>Situs ini dapat memakai <b>Meta Pixel</b> dan <b>Conversions API</b>. Saat Anda membuka halaman, melihat paket, mulai membeli, menekan tombol WhatsApp, atau menyelesaikan pembelian, kami mengirim catatan kejadian itu ke Meta berisi:</p>
+    <ul>
+      <li>alamat IP, jenis browser, dan cookie <code>_fbp</code>/<code>_fbc</code>;</li>
+      <li>untuk pembelian: nilai pesanan dan nomor pesanan;</li>
+      <li>email, nomor WhatsApp, dan nama Anda <b>dalam bentuk teracak (hash SHA-256)</b> — Meta hanya bisa mencocokkannya dengan akun yang sudah memiliki data yang sama, dan tidak bisa membaca aslinya dari kiriman kami.</li>
+    </ul>
+    <p>Meta memakai data ini untuk melaporkan hasil iklan dan menayangkan iklan kami kepada orang yang relevan, sesuai kebijakan data Meta. Anda dapat mengatur preferensi iklan di akun Facebook/Instagram Anda, atau memblokir cookie pihak ketiga dan pelacak di pengaturan browser.</p>
+
+    <h2>5. Pihak yang membantu kami memproses data</h2>
+    <ul>
+      <li><b>Midtrans</b> — memproses pembayaran.</li>
+      <li><b>Resend</b> — mengirim email kode aktivasi.</li>
+      <li><b>Vercel</b> dan <b>Upstash</b> — menjalankan situs, aplikasi, dan basis data pesanan.</li>
+      <li><b>Meta</b> — pengukuran iklan, seperti dijelaskan di atas.</li>
+      <li><b>Google Fonts</b> dan <b>unpkg</b> — menyajikan huruf dan ikon; keduanya menerima alamat IP Anda saat halaman dimuat.</li>
+    </ul>
+    <p>Sebagian penyedia di atas menyimpan data di server luar Indonesia.</p>
+
+    <h2>6. Berapa lama data disimpan</h2>
+    <ul>
+      <li><b>Pesanan yang tidak dibayar</b> terhapus otomatis setelah 3 hari.</li>
+      <li><b>Pesanan lunas dan kode aktivasi</b> disimpan selama akses Anda berlaku, supaya kami bisa membantu bila Anda berganti perangkat.</li>
+      <li><b>Alamat IP, jenis browser, dan cookie</b> yang menempel pada pesanan dihapus segera setelah catatan pembelian terkirim ke Meta.</li>
+      <li><b>Pencatat percobaan per alamat IP</b> terhapus sendiri dalam 10–15 menit.</li>
+    </ul>
+
+    <h2>7. Hak Anda</h2>
+    <p>Anda berhak meminta salinan data Anda, memperbaikinya, atau memintanya dihapus. Kirim permintaan ke <a href={`mailto:${EMAIL_ADMIN}?subject=Permintaan%20data%20pribadi`}>{EMAIL_ADMIN}</a> dari alamat email yang Anda pakai saat membeli; kami tindak lanjuti secepatnya, insyaAllah. Perlu diketahui: bila data pesanan dihapus, kode aktivasi yang terkait tidak dapat kami pulihkan lagi.</p>
+
+    <h2>8. Perubahan kebijakan</h2>
+    <p>Bila cara kami mengolah data berubah, halaman ini diperbarui dan tanggal di bagian atas disesuaikan.</p>
+  </article>
+</Sederhana>
+
+<style>
+  .pv { max-width: 760px; padding: clamp(40px, 7vw, 84px) 0 clamp(56px, 8vw, 96px); }
+  .pv h1 { margin: 16px 0 18px; font-size: clamp(2rem, 6vw, 3.1rem); letter-spacing: -.035em; }
+  .pv-lead { color: var(--muted); font-size: 1.08rem; }
+  .pv-tanggal { color: var(--muted); font-size: .85rem; }
+  .pv h2 { margin: 44px 0 12px; font-size: clamp(1.3rem, 3.6vw, 1.65rem); letter-spacing: -.02em; }
+  .pv h3 { margin: 22px 0 8px; font-family: var(--sans); font-size: 1rem; font-weight: 700; letter-spacing: 0; }
+  .pv p, .pv li { font-size: .98rem; line-height: 1.7; }
+  .pv ul { margin: 0 0 16px; padding-left: 22px; }
+  .pv li { margin-bottom: 6px; }
+  .pv a { color: var(--gold-deep); text-decoration: underline; text-underline-offset: 3px; }
+  .pv code { padding: 1px 6px; border-radius: 6px; background: var(--paper-deep); font-size: .88em; }
+</style>

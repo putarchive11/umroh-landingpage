@@ -1,0 +1,135 @@
+---
+// Halaman setelah pembayaran. Pembeli tiba di sini dari halaman pembayaran Midtrans.
+// Halaman bertanya ke server sampai pembayaran terverifikasi, lalu menampilkan kode aktivasi.
+import Sederhana from '../layouts/Sederhana.astro';
+import { EMAIL_ADMIN, WA_ADMIN } from '../config';
+
+const waBantuan = `https://wa.me/${WA_ADMIN}?text=` + encodeURIComponent('Assalamu’alaikum, saya butuh bantuan untuk pesanan Kunci Umroh Mandiri. Nomor pesanan: ');
+---
+<Sederhana judul="Terima kasih — Kunci Umroh Mandiri" deskripsi="Status pembayaran dan kode aktivasi Kunci Umroh Mandiri." jalur="/terima-kasih/" noindex gelap>
+  <!-- Token pesanan dipindahkan dari alamat ke penyimpanan tab, lalu alamat dibersihkan,
+       supaya token tidak tertinggal di riwayat browser dan tidak ikut terbaca Pixel. -->
+  <script is:inline slot="sebelum-pixel">
+    (function () {
+      try {
+        var q = new URLSearchParams(location.search);
+        var id = q.get('o') || q.get('order_id') || '';
+        var t = q.get('t') || '';
+        if (id) sessionStorage.setItem('kum_kembali', JSON.stringify({ id: id, t: t }));
+        if (location.search) history.replaceState(null, '', location.pathname);
+      } catch (e) {}
+    })();
+  </script>
+
+  <section class="tk">
+    <div class="tk-kartu" id="tk" data-keadaan="memeriksa" data-wa={waBantuan}>
+
+      <div class="tk-bagian" data-untuk="memeriksa">
+        <span class="tk-putar" aria-hidden="true"></span>
+        <h1>Memeriksa pembayaran Anda…</h1>
+        <p>Mohon tunggu sebentar, jangan tutup halaman ini.</p>
+      </div>
+
+      <div class="tk-bagian" data-untuk="menunggu">
+        <span class="tk-ikon tk-ikon--tunggu"><i class="ph ph-hourglass-medium" aria-hidden="true"></i></span>
+        <h1>Menunggu pembayaran</h1>
+        <p>Pembayaran Anda belum kami terima. Bila sudah membayar, halaman ini memperbarui sendiri dalam beberapa detik, insyaAllah.</p>
+        <a class="tk-tombol" data-tk="bayar" href="/#paket"><i class="ph ph-arrow-right" aria-hidden="true"></i> Lanjutkan pembayaran</a>
+        <button class="tk-tautan" type="button" data-tk="cek">Saya sudah bayar, cek lagi</button>
+      </div>
+
+      <div class="tk-bagian" data-untuk="lunas">
+        <span class="tk-ikon tk-ikon--lunas"><i class="ph ph-check" aria-hidden="true"></i></span>
+        <span class="tk-eyebrow">Alhamdulillah, pembayaran diterima</span>
+        <h1>Ini kode aktivasi Anda</h1>
+        <div class="tk-kode">
+          <output data-tk="kode" aria-label="Kode aktivasi">KUS-····-····</output>
+          <button type="button" data-tk="salin"><i class="ph ph-copy" aria-hidden="true"></i> <span>Salin</span></button>
+        </div>
+        <a class="tk-tombol" data-tk="buka" href="#" target="_blank" rel="noopener"><i class="ph ph-key" aria-hidden="true"></i> Buka aplikasi &amp; aktifkan</a>
+        <ol class="tk-langkah">
+          <li><span>1</span><p>Tekan tombol di atas. Kode terisi otomatis, lalu tekan <b>Aktifkan</b>.</p></li>
+          <li><span>2</span><p>Pengguna iPhone: pasang dulu aplikasi ke Layar Utama (Bagikan › Tambah ke Layar Utama), lalu masukkan kode dari ikon tersebut.</p></li>
+          <li><span>3</span><p>Satu kode berlaku untuk <span data-tk="maks">2</span> perangkat. Mohon tidak dibagikan kepada orang lain.</p></li>
+        </ol>
+        <p class="tk-catatan" data-tk="email"></p>
+      </div>
+
+      <div class="tk-bagian" data-untuk="gagal">
+        <span class="tk-ikon tk-ikon--gagal"><i class="ph ph-x" aria-hidden="true"></i></span>
+        <h1 data-tk="judul-gagal">Pembayaran belum berhasil</h1>
+        <p data-tk="isi-gagal">Tidak ada dana yang kami terima untuk pesanan ini. Anda bisa mencoba lagi kapan saja.</p>
+        <a class="tk-tombol" href="/#paket"><i class="ph ph-arrow-counter-clockwise" aria-hidden="true"></i> Coba beli lagi</a>
+      </div>
+
+      <div class="tk-bagian" data-untuk="email">
+        <span class="tk-ikon tk-ikon--tunggu"><i class="ph ph-envelope-simple" aria-hidden="true"></i></span>
+        <h1>Terima kasih</h1>
+        <p>Bila pembayaran Anda berhasil, kode aktivasi dikirim ke email Anda dalam beberapa menit. Mohon periksa juga folder spam atau promosi.</p>
+        <p class="tk-catatan">Belum menerima email setelah 15 menit? Hubungi admin, kami bantu secepatnya, insyaAllah.</p>
+      </div>
+
+      <div class="tk-bagian" data-untuk="galat">
+        <span class="tk-ikon tk-ikon--tunggu"><i class="ph ph-wifi-slash" aria-hidden="true"></i></span>
+        <h1>Belum bisa memeriksa</h1>
+        <p>Koneksi ke server terputus. Pembayaran Anda tetap aman; kode aktivasi juga dikirim ke email Anda.</p>
+        <button class="tk-tombol" type="button" data-tk="cek"><i class="ph ph-arrow-clockwise" aria-hidden="true"></i> Coba periksa lagi</button>
+      </div>
+
+      <div class="tk-kaki">
+        <span data-tk="nomor"></span>
+        <a data-tk="wa" href={waBantuan} target="_blank" rel="noopener"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i> Butuh bantuan? Chat admin</a>
+        <a href={`mailto:${EMAIL_ADMIN}`}>{EMAIL_ADMIN}</a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    import { initTerimaKasih } from '../scripts/terima-kasih';
+    initTerimaKasih();
+  </script>
+</Sederhana>
+
+<style>
+  .tk { padding: clamp(28px, 6vw, 72px) 16px; display: flex; justify-content: center; }
+  .tk-kartu { width: min(480px, 100%); padding: 36px 28px 22px; border-radius: 24px; background: linear-gradient(180deg, #FFFBF0 0%, #F6EAC9 100%); box-shadow: 0 30px 80px rgba(0, 0, 0, .35); text-align: center; color: #1E211E; }
+  .tk-bagian { display: none; }
+  .tk-kartu[data-keadaan="memeriksa"] [data-untuk="memeriksa"],
+  .tk-kartu[data-keadaan="menunggu"] [data-untuk="menunggu"],
+  .tk-kartu[data-keadaan="lunas"] [data-untuk="lunas"],
+  .tk-kartu[data-keadaan="gagal"] [data-untuk="gagal"],
+  .tk-kartu[data-keadaan="email"] [data-untuk="email"],
+  .tk-kartu[data-keadaan="galat"] [data-untuk="galat"] { display: block; }
+
+  .tk-kartu h1 { margin: 6px 0 12px; font-size: clamp(1.6rem, 6vw, 2rem); letter-spacing: -.02em; line-height: 1.2; color: #14251E; }
+  .tk-kartu p { margin: 0 0 18px; color: #3C4A42; font-size: .95rem; line-height: 1.6; }
+  .tk-eyebrow { display: block; color: #A57C2C; font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+
+  .tk-ikon { display: inline-flex; align-items: center; justify-content: center; width: 64px; height: 64px; margin-bottom: 14px; border-radius: 50%; font-size: 30px; }
+  .tk-ikon--lunas { background: #0B5A40; color: #FFF8E7; box-shadow: 0 0 0 8px #0B5A401F; }
+  .tk-ikon--tunggu { background: #B992452E; color: #8F6B2E; }
+  .tk-ikon--gagal { background: #B3402A1F; color: #B3402A; }
+
+  .tk-putar { display: inline-block; width: 44px; height: 44px; margin-bottom: 18px; border: 4px solid #0B5A4026; border-top-color: #0B5A40; border-radius: 50%; animation: tk-putar .9s linear infinite; }
+  @keyframes tk-putar { to { transform: rotate(360deg); } }
+  @media (prefers-reduced-motion: reduce) { .tk-putar { animation-duration: 2.4s; } }
+
+  .tk-kode { display: flex; flex-direction: column; align-items: center; gap: 10px; margin: 4px 0 18px; padding: 18px 12px 14px; border: 2px dashed #B99245; border-radius: 16px; background: #fff; }
+  .tk-kode output { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: clamp(1.5rem, 7.2vw, 2rem); font-weight: 700; letter-spacing: .08em; color: #0B5A40; user-select: all; }
+  .tk-kode button { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; border: 1px solid #0B5A4040; border-radius: 999px; background: #0B5A400F; color: #0B5A40; font-size: .85rem; font-weight: 700; cursor: pointer; }
+
+  .tk-tombol { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; min-height: 54px; padding: 0 20px; border: 0; border-radius: 999px; background-image: linear-gradient(-90deg, #0F6B4C 0%, #073D2C 100%); color: #FFF8E7; font-size: 1rem; font-weight: 700; box-shadow: 0 12px 24px #073D2C40; cursor: pointer; }
+  .tk-tombol i { font-size: 19px; }
+  .tk-tautan { margin-top: 14px; border: 0; background: none; color: #0B5A40; font-size: .9rem; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+
+  .tk-langkah { display: grid; gap: 10px; margin: 20px 0 16px; padding: 0; list-style: none; text-align: left; }
+  .tk-langkah li { display: flex; gap: 10px; align-items: flex-start; }
+  .tk-langkah li > span { flex: none; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: #0B5A40; color: #FFF8E7; font-size: 12px; font-weight: 700; }
+  .tk-langkah p { margin: 0; font-size: .86rem; line-height: 1.5; }
+  .tk-kartu p.tk-catatan { margin: 0; padding: 10px 12px; border-radius: 12px; background: #B992451F; color: #5A4520; font-size: .82rem; line-height: 1.5; text-align: left; }
+  .tk-kartu p.tk-catatan:empty { display: none; }
+
+  .tk-kaki { display: flex; flex-direction: column; align-items: center; gap: 6px; margin-top: 22px; padding-top: 16px; border-top: 1px solid #B9924540; color: #6F746E; font-size: .8rem; }
+  .tk-kaki a { display: inline-flex; align-items: center; gap: 6px; color: #0B5A40; font-weight: 600; }
+  .tk-kaki span:empty { display: none; }
+</style>
