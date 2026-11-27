@@ -138,50 +138,76 @@
     .checklist span { display: flex; align-items: center; gap: 8px; }
     .checklist span i { color: var(--gold); }
 
-    /* ===== Pricing — Lite (terang & ringkas) ===== */
-    .pricing-lite { padding: 110px 0; background: var(--paper-deep); }
-    .plite-head { max-width: 560px; margin: 0 auto 48px; text-align: center; }
-    .plite-head .eyebrow { justify-content: center; }
-    .plite-head .eyebrow::before { display: none; }
-    .plite-head h2 { margin: 14px 0 12px; }
-    .plite-head p { margin: 0; color: var(--muted); font-size: 1.05rem; }
+    /* ===== Pricing — Ivory Gold (terang, mewah, ringkas) ===== */
+    .pricing-lite { position: relative; isolation: isolate; overflow: hidden; padding: 120px 0 130px; background: linear-gradient(180deg, #fbf8f1 0%, #f6efe0 100%); }
+    .plite-pattern { position: absolute; inset: 0; z-index: -1; opacity: .16; pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='84' height='84' viewBox='0 0 84 84'%3E%3Cg fill='none' stroke='%23b99245' stroke-width='1'%3E%3Crect x='22' y='22' width='40' height='40'/%3E%3Crect x='22' y='22' width='40' height='40' transform='rotate(45 42 42)'/%3E%3Ccircle cx='42' cy='42' r='3'/%3E%3C/g%3E%3C/svg%3E");
+      -webkit-mask-image: radial-gradient(ellipse 75% 70% at 50% 45%, #000 20%, transparent 78%); mask-image: radial-gradient(ellipse 75% 70% at 50% 45%, #000 20%, transparent 78%); }
+    .plite-glow { position: absolute; z-index: -1; border-radius: 50%; filter: blur(70px); pointer-events: none; }
+    .plite-glow--a { width: 460px; height: 460px; left: -140px; top: -120px; background: rgba(185,146,69,.22); }
+    .plite-glow--b { width: 520px; height: 520px; right: -180px; bottom: -160px; background: rgba(39,72,63,.14); }
+    .plite-wrap { position: relative; }
 
-    .plite-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; max-width: 880px; margin: 0 auto; }
-    .plite-card { position: relative; display: flex; flex-direction: column; padding: 40px 36px 36px; background: var(--white); border: 1px solid var(--line); border-radius: 22px; }
-    .plite-card--vip { border-color: var(--gold); box-shadow: var(--shadow); }
+    .plite-head { max-width: 640px; margin: 0 auto 60px; text-align: center; }
+    .plite-pill { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 999px; background: rgba(255,255,255,.75); border: 1px solid var(--gold-soft); color: var(--gold-deep); font-size: .74rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; backdrop-filter: blur(6px); }
+    .plite-pill i { color: var(--gold); font-size: .95rem; }
+    .plite-head h2 { margin: 20px 0 14px; font-size: clamp(2.2rem, 4.6vw, 3.6rem); }
+    .plite-head h2 em { font-style: normal; background: linear-gradient(90deg, #8f6b2e, #d4af5a 50%, #8f6b2e); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .plite-head p { margin: 0 auto; max-width: 480px; color: var(--muted); font-size: 1.05rem; }
+    .plite-orn { display: flex; align-items: center; gap: 14px; margin-top: 26px; }
+    .plite-orn span { flex: 1; height: 1px; }
+    .plite-orn span:first-child { background: linear-gradient(90deg, transparent, #b9924580); }
+    .plite-orn span:last-child { background: linear-gradient(90deg, #b9924580, transparent); }
 
-    .plite-badge { position: absolute; top: -13px; left: 36px; padding: 6px 14px; background: var(--gold); color: #fff; border-radius: 999px; font-size: .68rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    .plite-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; max-width: 940px; margin: 0 auto; align-items: stretch; }
+    .plite-card { position: relative; display: flex; flex-direction: column; padding: 44px 40px 38px; border-radius: 28px; background: rgba(255,255,255,.92); border: 1px solid rgba(185,146,69,.28); box-shadow: 0 1px 0 #fff inset, 0 2px 4px rgba(51,38,15,.04), 0 18px 40px -12px rgba(51,38,15,.14); transition: transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .45s ease; }
+    .plite-card:hover { transform: translateY(-6px); box-shadow: 0 1px 0 #fff inset, 0 4px 8px rgba(51,38,15,.05), 0 30px 60px -14px rgba(51,38,15,.22); }
+    .plite-card--vip { margin-top: -14px; margin-bottom: 14px; border: 2px solid transparent; background: linear-gradient(180deg, #fffdf6, #fbf3dc) padding-box, linear-gradient(145deg, #e8cb80, #b99245 45%, #27483f) border-box; box-shadow: 0 1px 0 #fff inset, 0 24px 60px -16px rgba(185,146,69,.55); }
+
+    .plite-icon { display: grid; place-items: center; width: 54px; height: 54px; margin-bottom: 20px; border-radius: 16px; background: linear-gradient(145deg, #f6ebcd, #ecd9a6); color: var(--gold-deep); font-size: 1.6rem; box-shadow: 0 6px 14px -6px rgba(185,146,69,.6); }
+    .plite-icon--green { background: linear-gradient(145deg, #3a6356, #27483f); color: #f3dfa4; box-shadow: 0 6px 14px -6px rgba(39,72,63,.7); }
+    .plite-ribbon { position: absolute; top: 22px; right: 22px; display: inline-flex; align-items: center; gap: 6px; padding: 7px 13px; border-radius: 999px; background: linear-gradient(135deg, #d4af5a, #b99245); color: #fff; font-size: .68rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; box-shadow: 0 8px 16px -6px rgba(185,146,69,.8); }
     .plite-tier { color: var(--gold-deep); font-size: .74rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+    .plite-card h3 { margin: 10px 0 0; font-size: 1.45rem; line-height: 1.25; letter-spacing: -.02em; color: var(--ink); }
 
-    .plite-price { display: flex; align-items: baseline; flex-wrap: wrap; gap: 10px; margin: 14px 0 24px; padding-bottom: 24px; border-bottom: 1px solid var(--line); }
-    .plite-price strong { font-family: var(--serif); font-size: 2.5rem; font-weight: 600; letter-spacing: -.04em; line-height: 1; color: var(--ink); }
-    .plite-price span { color: var(--muted); font-size: .88rem; }
+    .plite-price { display: flex; align-items: center; gap: 14px; margin: 22px 0 24px; padding: 20px 0; border-top: 1px solid rgba(185,146,69,.28); border-bottom: 1px solid rgba(185,146,69,.28); }
+    .plite-price strong { font-family: var(--serif); font-size: 2.7rem; font-weight: 600; letter-spacing: -.045em; line-height: 1; white-space: nowrap; background: linear-gradient(135deg, #7a5a22, #c9a048 55%, #8f6b2e); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .plite-price strong.plite-price--text { font-size: 2.1rem; background: none; color: var(--green); -webkit-text-fill-color: var(--green); }
+    .plite-price span { color: var(--muted); font-size: .82rem; line-height: 1.45; }
 
-    .plite-features { display: flex; flex-direction: column; gap: 12px; margin: 0 0 32px; padding: 0; list-style: none; }
-    .plite-features li { display: flex; align-items: flex-start; gap: 12px; color: #3a3f3a; font-size: .95rem; line-height: 1.5; }
-    .plite-features i { flex: 0 0 auto; display: grid; place-items: center; width: 22px; height: 22px; margin-top: 1px; border-radius: 50%; background: var(--gold-soft); color: var(--gold-deep); font-size: .8rem; }
-    .plite-card--vip .plite-features i { background: var(--green); color: #fff; }
+    .plite-features { display: flex; flex-direction: column; gap: 14px; margin: 0 0 34px; padding: 0; list-style: none; }
+    .plite-features li { display: flex; align-items: flex-start; gap: 13px; color: #34393a; font-size: .96rem; line-height: 1.5; }
+    .plite-features i { flex: 0 0 auto; display: grid; place-items: center; width: 22px; height: 22px; margin-top: 1px; border-radius: 50%; background: linear-gradient(145deg, #d4af5a, #b99245); color: #fff; font-size: .78rem; }
+    .plite-card--vip .plite-features i { background: linear-gradient(145deg, #3a6356, #27483f); }
 
-    .plite-actions { display: flex; flex-direction: column; gap: 12px; margin-top: auto; }
-    .plite-btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; width: 100%; height: 54px; border: 0; border-radius: 999px; font-family: inherit; font-size: .95rem; font-weight: 700; cursor: pointer; transition: background-color .25s ease, box-shadow .25s ease, transform .25s ease; }
-    .plite-btn:hover { transform: translateY(-1px); }
-    .plite-btn i { font-size: 1.05rem; }
-    .plite-btn--primary { background: var(--gold); color: #fff; box-shadow: 0 12px 24px rgba(185,146,69,.22); }
-    .plite-btn--primary:hover { background: var(--gold-deep); }
-    .plite-btn--dark { background: var(--green); color: #fff; box-shadow: 0 12px 24px rgba(39,72,63,.22); }
-    .plite-btn--dark:hover { background: #1e3a32; }
-    .plite-link { display: inline-flex; align-items: center; justify-content: center; gap: 6px; color: var(--green); font-size: .9rem; font-weight: 700; }
+    .plite-actions { display: flex; flex-direction: column; gap: 14px; margin-top: auto; }
+    .plite-btn { position: relative; overflow: hidden; display: inline-flex; align-items: center; justify-content: center; gap: 10px; width: 100%; height: 56px; border: 0; border-radius: 999px; font-family: inherit; font-size: .98rem; font-weight: 700; color: #fff; cursor: pointer; transition: transform .3s ease, box-shadow .3s ease; }
+    .plite-btn::after { content: ""; position: absolute; top: 0; left: -80%; width: 50%; height: 100%; background: linear-gradient(100deg, transparent, rgba(255,255,255,.45), transparent); transform: skewX(-20deg); transition: left .7s ease; }
+    .plite-btn:hover { transform: translateY(-2px); }
+    .plite-btn:hover::after { left: 130%; }
+    .plite-btn i { font-size: 1.15rem; }
+    .plite-btn--gold { background: linear-gradient(135deg, #d9b765, #b99245 55%, #9c7a39); box-shadow: 0 14px 26px -10px rgba(185,146,69,.85); }
+    .plite-btn--green { background: linear-gradient(135deg, #3a6356, #27483f 60%, #1b332c); box-shadow: 0 14px 26px -10px rgba(39,72,63,.8); }
+    .plite-link { display: inline-flex; align-items: center; justify-content: center; gap: 6px; color: var(--green); font-size: .92rem; font-weight: 700; transition: color .2s ease; }
     .plite-link:hover { color: var(--gold-deep); }
     .plite-note { display: flex; align-items: center; justify-content: center; gap: 6px; color: var(--muted); font-size: .8rem; }
     .plite-note i { color: var(--gold-deep); font-size: .95rem; }
 
-    @media (max-width: 860px) {
-      .plite-cards { grid-template-columns: 1fr; max-width: 520px; }
+    @media (max-width: 880px) {
+      .plite-cards { grid-template-columns: 1fr; max-width: 540px; }
+      .plite-card--vip { margin: 8px 0 0; }
     }
     @media (max-width: 700px) {
-      .pricing-lite { padding: 72px 0; }
-      .plite-card { padding: 36px 24px 28px; }
-      .plite-price strong { font-size: 2.1rem; }
+      .pricing-lite { padding: 76px 0 84px; }
+      .plite-head { margin-bottom: 44px; }
+      .plite-card { padding: 38px 24px 30px; border-radius: 24px; }
+      .plite-price { flex-wrap: wrap; gap: 8px 14px; }
+      .plite-price strong { font-size: 2.3rem; }
+      .plite-ribbon { top: 18px; right: 16px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .plite-card, .plite-btn, .plite-btn::after { transition: none !important; }
+      .plite-card:hover, .plite-btn:hover { transform: none; }
     }
 
     /* ===== Old pricing (cream cards) ===== */
