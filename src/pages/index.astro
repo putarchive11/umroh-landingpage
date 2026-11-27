@@ -345,54 +345,116 @@ const WA_BUKTI = "https://wa.me/6287777995846?text=" + encodeURIComponent("Assal
           <span class="palt-line palt-line--r"></span>
         </div>
 
-        <div class="palt-cards">
-          <article class="palt-card reveal">
-            <div>
-              <span class="palt-tier">PAKET EBOOK + DIGITAL TOOLKIT</span>
-              <h3 class="palt-title">Untuk siap merencanakan mandiri</h3>
-            </div>
-            <div class="palt-price">
-              <span class="palt-price-value">{HARGA_EBOOK}</span>
-              <span class="palt-price-note">/ sekali bayar seumur hidup</span>
-            </div>
-            <ul class="palt-features">
-              <li class="palt-feature"><span class="palt-check"><i class="ph ph-check" aria-hidden="true"></i></span>Ebook lengkap 13 bab: panduan A–Z umroh mandiri</li>
-              <li class="palt-feature"><span class="palt-check"><i class="ph ph-check" aria-hidden="true"></i></span>Checklist dokumen &amp; persiapan interaktif</li>
-              <li class="palt-feature"><span class="palt-check"><i class="ph ph-check" aria-hidden="true"></i></span>Template anggaran &amp; kalkulator biaya</li>
-              <li class="palt-feature"><span class="palt-check"><i class="ph ph-check" aria-hidden="true"></i></span>Itinerary &amp; rencana perjalanan siap pakai</li>
-              <li class="palt-feature"><span class="palt-check"><i class="ph ph-check" aria-hidden="true"></i></span>Direktori aplikasi, website &amp; hotel rekomendasi</li>
-              <li class="palt-feature"><span class="palt-check"><i class="ph ph-check" aria-hidden="true"></i></span>Update informasi &amp; regulasi terbaru</li>
-            </ul>
-            <div class="palt-actions">
-              <button class="palt-cta palt-cta--qris" type="button" data-beli><i class="ph ph-qr-code hanya-manual" aria-hidden="true"></i><span class="hanya-manual">Bayar via QRIS</span><i class="ph ph-shopping-bag-open hanya-otomatis" aria-hidden="true"></i><span class="hanya-otomatis">Beli Sekarang</span></button>
-              <a class="palt-cta" href="https://wa.me/6287777995846?text=Assalamu%E2%80%99alaikum%2C%20saya%20tertarik%20dengan%20Paket%20Ebook%20%2B%20Digital%20Toolkit%20seharga%20Rp125.000.%20Mohon%20info%20cara%20mendapatkannya." target="_blank" rel="noopener">Tanya dulu via WhatsApp <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
-              <span class="palt-pay-note"><i class="ph ph-shield-check" aria-hidden="true"></i><span>Bayar {HARGA_EBOOK}, tanpa biaya tambahan<span class="hanya-otomatis"> · kode aktivasi langsung dikirim</span></span></span>
-            </div>
-          </article>
+        <div class="p3d-scene reveal" id="p3d-scene">
+          <div class="p3d-float">
+            <div class="p3d-card" id="p3d-card">
+              <span class="p3d-sheen" aria-hidden="true"></span>
+              <h3 class="p3d-title">Pilih Paket</h3>
 
-          <article class="palt-card palt-card--vip reveal reveal-delay-1">
-            <div class="palt-badge">
-              <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" style="height:10px;width:10px"><path d="M50.00 0.00 L64.66 14.62 L85.36 14.64 L85.38 35.34 L100.00 50.00 L85.38 64.66 L85.36 85.36 L64.66 85.38 L50.00 100.00 L35.34 85.38 L14.64 85.36 L14.62 64.66 L0.00 50.00 L14.62 35.34 L14.64 14.64 L35.34 14.62 Z" fill="#062C21"></path></svg>
-              PALING LENGKAP
+              <div class="p3d-list" role="radiogroup" aria-label="Pilih paket">
+                <div class="p3d-plan is-on" data-plan="ebook">
+                  <button type="button" class="p3d-row" role="radio" aria-checked="true" aria-controls="p3d-pane-ebook">
+                    <span class="p3d-radio" aria-hidden="true"><i></i></span>
+                    <span class="p3d-info"><strong>Ebook + Aplikasi</strong><small>Paket Ebook + Digital Toolkit</small></span>
+                    <span class="p3d-cost"><b>{HARGA_EBOOK}</b><small>/ sekali bayar seumur hidup</small></span>
+                  </button>
+                  <div class="p3d-more" id="p3d-pane-ebook"><div class="p3d-clip"><div class="p3d-pane">
+                    <p class="p3d-lead">Untuk siap merencanakan mandiri</p>
+                    <ul class="p3d-feats">
+                      <li>Ebook lengkap 13 bab: panduan A–Z umroh mandiri</li>
+                      <li>Checklist dokumen &amp; persiapan interaktif</li>
+                      <li>Template anggaran &amp; kalkulator biaya</li>
+                      <li>Itinerary &amp; rencana perjalanan siap pakai</li>
+                      <li>Direktori aplikasi, website &amp; hotel rekomendasi</li>
+                      <li>Update informasi &amp; regulasi terbaru</li>
+                    </ul>
+                    <div class="p3d-actions">
+                      <button class="p3d-cta p3d-cta--gold" type="button" data-beli><i class="ph ph-qr-code hanya-manual" aria-hidden="true"></i><span class="hanya-manual">Bayar via QRIS</span><i class="ph ph-shopping-bag-open hanya-otomatis" aria-hidden="true"></i><span class="hanya-otomatis">Beli Sekarang</span></button>
+                      <a class="p3d-cta p3d-cta--ghost" href="https://wa.me/6287777995846?text=Assalamu%E2%80%99alaikum%2C%20saya%20tertarik%20dengan%20Paket%20Ebook%20%2B%20Digital%20Toolkit%20seharga%20Rp125.000.%20Mohon%20info%20cara%20mendapatkannya." target="_blank" rel="noopener">Tanya dulu via WhatsApp <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+                      <span class="p3d-note"><i class="ph ph-shield-check" aria-hidden="true"></i><span>Bayar {HARGA_EBOOK}, tanpa biaya tambahan<span class="hanya-otomatis"> · kode aktivasi langsung dikirim</span></span></span>
+                    </div>
+                  </div></div></div>
+                </div>
+
+                <div class="p3d-plan p3d-plan--vip" data-plan="vip">
+                  <span class="p3d-badge">PALING LENGKAP</span>
+                  <button type="button" class="p3d-row" role="radio" aria-checked="false" aria-controls="p3d-pane-vip">
+                    <span class="p3d-radio" aria-hidden="true"><i></i></span>
+                    <span class="p3d-info"><strong>+ Mutawwif</strong><small>Paket VIP Mutawwif</small></span>
+                    <span class="p3d-cost"><b>Hubungi Kami</b><small>/ custom</small></span>
+                  </button>
+                  <div class="p3d-more" id="p3d-pane-vip"><div class="p3d-clip"><div class="p3d-pane">
+                    <p class="p3d-lead">Untuk ketenangan maksimal di Tanah Suci</p>
+                    <ul class="p3d-feats">
+                      <li>Semua akses ebook lengkap 13 bab + 4 digital toolkit</li>
+                      <li>Penjemputan saat tiba di Arab Saudi</li>
+                      <li>Bimbingan ibadah privat oleh mutawwif berpengalaman</li>
+                      <li>Grup WhatsApp eksklusif sebelum &amp; saat di Saudi</li>
+                      <li>Konsultasi rute &amp; logistik lokal</li>
+                    </ul>
+                    <div class="p3d-actions">
+                      <a class="p3d-cta p3d-cta--green" href="https://wa.me/6287777995846?text=Assalamu%E2%80%99alaikum%2C%20saya%20tertarik%20dengan%20Paket%20VIP%20Mutawwif.%20Mohon%20info%20layanan%20dan%20harganya." target="_blank" rel="noopener">Ambil Paket VIP Mutawwif <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+                    </div>
+                  </div></div></div>
+                </div>
+              </div>
             </div>
-            <div class="palt-top">
-              <span class="palt-tier">PAKET VIP MUTAWWIF</span>
-              <h3 class="palt-title">Untuk ketenangan maksimal di Tanah Suci</h3>
-            </div>
-            <div class="palt-price">
-              <span class="palt-price-value">Hubungi Kami</span>
-              <span class="palt-price-note">/ custom</span>
-            </div>
-            <ul class="palt-features">
-              <li class="palt-feature"><span class="palt-check"><i class="ph ph-check" aria-hidden="true"></i></span>Semua akses ebook lengkap 13 bab + 4 digital toolkit</li>
-              <li class="palt-feature"><span class="palt-check"><i class="ph ph-check" aria-hidden="true"></i></span>Penjemputan saat tiba di Arab Saudi</li>
-              <li class="palt-feature"><span class="palt-check"><i class="ph ph-check" aria-hidden="true"></i></span>Bimbingan ibadah privat oleh mutawwif berpengalaman</li>
-              <li class="palt-feature"><span class="palt-check"><i class="ph ph-check" aria-hidden="true"></i></span>Grup WhatsApp eksklusif sebelum &amp; saat di Saudi</li>
-              <li class="palt-feature"><span class="palt-check"><i class="ph ph-check" aria-hidden="true"></i></span>Konsultasi rute &amp; logistik lokal</li>
-            </ul>
-            <a class="palt-cta palt-cta--solid" href="https://wa.me/6287777995846?text=Assalamu%E2%80%99alaikum%2C%20saya%20tertarik%20dengan%20Paket%20VIP%20Mutawwif.%20Mohon%20info%20layanan%20dan%20harganya." target="_blank" rel="noopener">Ambil Paket VIP Mutawwif <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
-          </article>
+          </div>
         </div>
+
+        <script is:inline>
+          (function () {
+            var card = document.getElementById('p3d-card');
+            var scene = document.getElementById('p3d-scene');
+            if (!card || !scene) return;
+            var plans = Array.prototype.slice.call(card.querySelectorAll('.p3d-plan'));
+            function pick(plan) {
+              plans.forEach(function (p) {
+                var on = p === plan;
+                p.classList.toggle('is-on', on);
+                p.querySelector('.p3d-row').setAttribute('aria-checked', on ? 'true' : 'false');
+              });
+            }
+            plans.forEach(function (plan, i) {
+              var row = plan.querySelector('.p3d-row');
+              row.addEventListener('click', function () { pick(plan); });
+              row.addEventListener('keydown', function (e) {
+                var d = e.key === 'ArrowDown' || e.key === 'ArrowRight' ? 1 : e.key === 'ArrowUp' || e.key === 'ArrowLeft' ? -1 : 0;
+                if (!d) return;
+                e.preventDefault();
+                var next = plans[(i + d + plans.length) % plans.length];
+                pick(next);
+                next.querySelector('.p3d-row').focus();
+              });
+            });
+
+            var fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+            var calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (!fine || calm) { scene.classList.add('p3d-static'); return; }
+            var raf = 0;
+            scene.addEventListener('pointermove', function (e) {
+              var r = card.getBoundingClientRect();
+              var px = (e.clientX - r.left) / r.width;
+              var py = (e.clientY - r.top) / r.height;
+              cancelAnimationFrame(raf);
+              raf = requestAnimationFrame(function () {
+                scene.classList.add('is-live');
+                card.style.setProperty('--ry', ((px - 0.5) * 16).toFixed(2) + 'deg');
+                card.style.setProperty('--rx', ((0.5 - py) * 12).toFixed(2) + 'deg');
+                card.style.setProperty('--mx', (px * 100).toFixed(1) + '%');
+                card.style.setProperty('--my', (py * 100).toFixed(1) + '%');
+              });
+            });
+            scene.addEventListener('pointerleave', function () {
+              cancelAnimationFrame(raf);
+              scene.classList.remove('is-live');
+              card.style.setProperty('--ry', '0deg');
+              card.style.setProperty('--rx', '0deg');
+              card.style.setProperty('--mx', '50%');
+              card.style.setProperty('--my', '0%');
+            });
+          })();
+        </script>
       </div>
     </section>
 
